@@ -14,8 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include,reverse
+from django.http import HttpResponseRedirect
+
+def redirect_to_homepage(request):
+    """ Redirect to app index """
+    return HttpResponseRedirect(reverse('arbitrator:index'))
 
 urlpatterns = [
+    path('arbitrator/', include('arbitrator.urls')),
     path('admin/', admin.site.urls),
+    path('', redirect_to_homepage),
 ]
