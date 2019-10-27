@@ -1,5 +1,9 @@
 body {
-    background-color: rgb(163, 126, 178);
+    height: 100px;
+    background: -webkit-linear-gradient(left top, red , blue); 
+    background: -o-linear-gradient(bottom right, red, blue); 
+    background: -moz-linear-gradient(bottom right, red, blue);
+    background: linear-gradient(to bottom right, red , blue); 
 }
 
 #logo {
@@ -7,7 +11,7 @@ body {
     font-size:50px;
     position: absolute;
     top: 20%;
-    left: 40%;
+    left: 41%;
     color: white;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
@@ -35,7 +39,8 @@ body {
     font-size: 22px;
     position: absolute;
     top: 35%;
-    left:20%;
-    text-shadow: 2px 2px 5px red;
+    left:24%;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 
 }
