@@ -17,9 +17,11 @@ body {
     left:46%;
 }
 #login-signup {
+    size: 150%;
+    font-size: 22px;
     position: absolute;
     top: 60%;
-    left:46%;
+    left:43%;
     color:black;
     font-weight:bold;
     animation: myanimation 10s infinite;
@@ -34,8 +36,9 @@ body {
   }
 
 #description {
+    font-size: 22px;
     position: absolute;
-    top: 40%;
-    left:30%;
+    top: 35%;
+    left:20%;
 
 }
