@@ -6,6 +6,18 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size:50px;
     position: absolute;
-    top: 30%;
-    left: 800px;
+    top: 20%;
+    left: 40%;
+}
+
+#short-description {
+    font-size: 22px;
+    position: absolute;
+    top: 32%;
+    left:46%;
+}
+#login-signup {
+    position: absolute;
+    top: 60%;
+    left:46%;
 }
