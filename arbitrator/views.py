@@ -6,7 +6,7 @@ from django.views import generic
 from django.contrib import messages
 
 
-class IndexView(generic.DetailView):
-    template_name = 'arbitrator/index.html'
+def indexview(request):
+    return render(request, 'arbitrator/index.html')
     
     
