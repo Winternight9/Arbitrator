@@ -8,7 +8,7 @@ body {
     font-size:50px;
     position: absolute;
     top: 20%;
-    left: 41%;
+    left: 44%;
     color: white;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
@@ -18,7 +18,7 @@ body {
     font-size: 22px;
     position: absolute;
     top: 60%;
-    left:43%;
+    left:46%;
     color:black;
     font-weight:bold;
     animation: myanimation 10s infinite;
@@ -37,7 +37,7 @@ body {
     font-size: 22px;
     position: absolute;
     top: 35%;
-    left:30%;
+    left:33%;
     color: white;
     text-shadow: 2px 2px 4px #000000;
 
