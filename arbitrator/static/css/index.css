@@ -8,14 +8,10 @@ body {
     position: absolute;
     top: 20%;
     left: 40%;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
-#short-description {
-    font-size: 22px;
-    position: absolute;
-    top: 32%;
-    left:46%;
-}
 #login-signup {
     size: 150%;
     font-size: 22px;
@@ -40,5 +36,6 @@ body {
     position: absolute;
     top: 35%;
     left:20%;
+    text-shadow: 2px 2px 5px red;
 
 }
