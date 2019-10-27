@@ -21,3 +21,10 @@ body {
     top: 60%;
     left:46%;
 }
+
+#description {
+    position: absolute;
+    top: 40%;
+    left:30%;
+
+}
