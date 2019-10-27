@@ -1,11 +1,11 @@
 from django.urls import path
 
-from . import views
+from .views import indexView
 
 
 app_name = 'arbitrator'
 urlpatterns = [
-    path('',views.indexview, name='index'),
+    path('',indexView, name='index'),
 
 
 ]
