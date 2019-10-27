@@ -20,7 +20,18 @@ body {
     position: absolute;
     top: 60%;
     left:46%;
+    color:black;
+    font-weight:bold;
+    animation: myanimation 10s infinite;
 }
+  
+  @keyframes myanimation {
+    0% {background-color: red;}
+    25%{background-color:yellow;}
+    50%{background-color:green;}
+    75%{background-color:brown;}
+    100% {background-color: red;}
+  }
 
 #description {
     position: absolute;
