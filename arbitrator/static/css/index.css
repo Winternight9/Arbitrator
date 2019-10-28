@@ -12,21 +12,27 @@ body {
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
 }
 
-#login-signup {
-  margin: 0 17%;
-  size: 150%;
+.button {
+  background: white;
+  margin: 10px 34%;
   font-size: 22px;
-  position: absolute;
-  color: black;
+  position: inherit;
+  color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   border-radius: 5px;
+  border: 0;
+  transition: transform .2s;
+}
+
+.button:hover {
+  transform: scale(1.02);
 }
 
 #description {
   width: 650px;
-  font-size: 22px;
+  font-size: 24px;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(32, 32, 34), 0 0 5px rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
 }
 
 .frame {

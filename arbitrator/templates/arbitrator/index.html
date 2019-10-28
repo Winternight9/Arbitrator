@@ -1,32 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Arbitrator</title>
-    <link rel="stylesheet" href="../../static/css/index.css"
-  </head>
-  <body>
-    <div class="frame">
-      <div class="center">
-        <h1 id="logo">Arbitrator</h1>
-        <p id="description" style="text-indent:1cm;">
-          This application provides a customizable web-based evaluation form
-          with data summarization and status reporting. Event organizers can
-          create a custom form for their event containing a list of entrants and
-          a set of criteria that they are to be rated on. Criteria may also
-          include guidance on ratings. There may optionally be space for
-          entering comments.
-        </p>
-        <button
-          id="login-signup"
-          type="button"
-          onclick="alert('Test Test Test')"
-        >
-          Login/Signup
-        </button>
-      </div>
-    </div>
-  </body>
-</html>
+{% extends 'arbitrator/base.html' %}
+
+{% block title %}
+  Arbitrator
+{% endblock %}
+
+{% load staticfiles %}
+{% block css %}
+  <link rel="stylesheet" href="../../static/css/index.css" />
+{% endblock %}
+
+{% block content %}
+<div class="frame">
+  <div class="center">
+    <h1 id="logo">Arbitrator</h1>
+    <p id="description" style="text-indent:1cm;">
+      This application provides a customizable web-based evaluation form with
+      data summarization and status reporting. Event organizers can create a
+      custom form for their event containing a list of entrants and a set of
+      criteria that they are to be rated on. Criteria may also include guidance
+      on ratings. There may optionally be space for entering comments.
+    </p>
+    <button id="login-button" class="button" type="button" onclick="alert('Test Test Test')">
+      Login/Signup
+    </button>
+  </div>
+</div>
+{% endblock %}
