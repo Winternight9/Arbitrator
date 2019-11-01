@@ -25,4 +25,5 @@ urlpatterns = [
     path('arbitrator/', include('arbitrator.urls')),
     path('admin/', admin.site.urls),
     path('', redirect_to_homepage),
+    path('o/', include('social_django.urls', namespace='social')),
 ]

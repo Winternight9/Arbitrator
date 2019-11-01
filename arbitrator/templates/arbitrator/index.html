@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="../../static/css/index.css"
   </head>
   <body>
+    <div>
+        {% if user.is_authenticated %}
+          <p  class="text-white">Logged in as {{ user.username }}</p>
+            <a href="{% url "arbitrator:logout" %}">Logout</a>
+        {% else %}
+          <i class="fab fa-google" ></i>
+          <a href="{% url "social:begin" "google-oauth2" %}">Sign in with Google</a>
+        {% endif %}
+    </div>
     <div class="frame">
       <div class="center">
         <h1 id="logo">Arbitrator</h1>
