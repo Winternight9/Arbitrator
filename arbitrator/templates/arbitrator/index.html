@@ -14,7 +14,7 @@
   <div class="container">
     <div class="frame center">
       <h1 id="logo">Arbitrator</h1>
-      <p id="description" style="text-indent:1cm;">
+      <p id="description">
         This application provides a customizable web-based evaluation form with
         data summarization and status reporting. Event organizers can create a
         custom form for their event containing a list of entrants and a set of
@@ -22,7 +22,7 @@
         on ratings. There may optionally be space for entering comments.
       </p>
       <button id="login-button" class="button" type="button">
-        <a class="login" href=" {% url "arbitrator:login" %}">
+        <a class="login" href="{% url "arbitrator:login" %}">
           Login/Signup
         </a>
       </button>

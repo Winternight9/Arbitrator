@@ -26,6 +26,7 @@
   font-size: 22px;
   text-decoration: none;
   color: #3e3e3e;
+  cursor: pointer;
 }
 
 .frame {
@@ -40,12 +41,12 @@
 #logo {
   margin: 12px 0;
   font-size: 56px;
+  cursor: default;
 }
 
 #description {
   margin: 8px 0 0 0;
-
-  text-indent: 16%;
+  text-indent: 8%;
   text-align: start;
   padding: 12px 24px;
   background: #f6f6f6;

@@ -4,13 +4,13 @@ from django.shortcuts import render, reverse, redirect
 from ..forms import RegistrationForm
 
 
-def login_view(request):
+def registrationView(request):
     form = RegistrationForm()
     context = {
         'form':  form
     }
 
-    return render(request, 'arbitrator/login.html', context)
+    return render(request, 'arbitrator/registration.html', context)
 
 
-sys.modules[__name__] = login_view
+sys.modules[__name__] = registrationView

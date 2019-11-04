@@ -3,9 +3,10 @@ import sys
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
+from django.contrib.auth.forms import UserCreationForm
 
 
-class RegistrationForm(forms.Form):
+class RegistrationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = ""
@@ -31,7 +32,7 @@ class RegistrationForm(forms.Form):
         ),
         label=mark_safe("Email</br>"))
 
-    password = forms.CharField(
+    password1 = forms.CharField(
         max_length=14,
         min_length=6,
         widget=forms.PasswordInput(
@@ -41,7 +42,7 @@ class RegistrationForm(forms.Form):
             }),
         label=mark_safe("Password</br>"))
 
-    confirm_password = forms.CharField(
+    password2 = forms.CharField(
         max_length=14,
         min_length=6,
         widget=forms.PasswordInput(
@@ -56,8 +57,8 @@ class RegistrationForm(forms.Form):
         fields = [
             'username',
             'email',
-            'password',
-            'confirm_password'
+            'password1',
+            'password2'
         ]
 
 
