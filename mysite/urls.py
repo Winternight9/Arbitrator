@@ -24,6 +24,7 @@ def redirect_to_homepage(request):
 urlpatterns = [
     path('arbitrator/', include('arbitrator.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', redirect_to_homepage),
     path('o/', include('social_django.urls', namespace='social')),
 ]
