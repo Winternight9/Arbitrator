@@ -27,17 +27,29 @@
 }
 
 .input {
+  padding-left: 10px;
   margin-top: 8px;
   border-radius: 4px;
   width: 90%;
   border: solid 1px #d4d4d4;
   font-size: 16px;
   padding: 4px;
+  font-family: "Nunito", sans-serif;
+}
+
+label {
+  font-size: 20px;
 }
 
 .input-container {
   background: #f6f6f6;
   padding: 8px 24px;
+}
+
+#google-signin-button {
+  width: 40%;
+  height: auto;
+  box-shadow: none;
 }
 
 .button {
