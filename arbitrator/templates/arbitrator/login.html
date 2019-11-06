@@ -23,6 +23,9 @@
         <div class="input-container">
           {% csrf_token %}
           {{ form.as_p }}
+          <a href="{% url "social:begin" "googleoauth2" %}">
+            <img id="google-sigin-button" src="../../static/images/googleSigninButton.png">
+          </a>
         </div>
         <div class="button-frame">
           <button class="button" type="submit">Login</button>
