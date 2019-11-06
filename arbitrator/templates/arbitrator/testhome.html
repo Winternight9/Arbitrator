@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+<p  class="text-white">Logged in as {{ user.username }}</p>
+  <a href="{% url "arbitrator:logout" %}">Logout</a>
+{% else %}
+<i class="fab fa-google" ></i>
+<a href="{% url "social:begin" "google-oauth2" %}">Sign in with Google</a>
+{% endif %}
+<br>
+<br>
+success

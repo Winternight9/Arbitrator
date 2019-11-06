@@ -1,0 +1,4 @@
+Django>=2.2.6
+social-auth-app-django
+psycopg2
+python-decouple
