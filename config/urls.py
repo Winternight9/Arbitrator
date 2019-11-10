@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -26,5 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', redirect_to_homepage),
-    path('o/', include('social_django.urls', namespace='social')),
+    path('', include('social_django.urls', namespace="oauth")),
 ]

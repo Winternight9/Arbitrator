@@ -1,39 +1,54 @@
-body {
-  height: 100%;
-  width: 100%;
-  background-image: url("./../images/indexBackground.jpg");
-}
-
-#logo {
-  margin: 0 25%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 50px;
-  color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
-}
-
-#login-signup {
-  margin: 0 17%;
-  size: 150%;
-  font-size: 22px;
-  position: absolute;
-  color: black;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-#description {
-  width: 650px;
-  font-size: 22px;
-  color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(32, 32, 34), 0 0 5px rgb(0, 0, 0);
-}
-
-.frame {
+.container {
   display: flex;
-  padding-top: 7%;
+  padding-top: 8%;
 }
 
 .center {
   margin: 0 auto;
+}
+
+.button {
+  background: none;
+  text-align: center;
+  margin: 16px 0;
+  position: inherit;
+  border-radius: 5px;
+  border: 0;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+.login {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+  color: #3e3e3e;
+  cursor: pointer;
+}
+
+.frame {
+  text-align: center;
+  padding: 0 0;
+  background: #e4e4e4;
+  border-radius: 16px;
+  width: 60%;
+  box-shadow: 0 0 3px rgb(104, 104, 104);;
+}
+
+#logo {
+  margin: 12px 0;
+  font-size: 56px;
+  cursor: default;
+}
+
+#description {
+  margin: 8px 0 0 0;
+  text-indent: 8%;
+  text-align: start;
+  padding: 12px 24px;
+  background: #f6f6f6;
+  font-size: 24px;
 }
