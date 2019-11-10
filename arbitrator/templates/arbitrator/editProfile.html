@@ -1,0 +1,33 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="../../static/css/index.css" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="frame center">
+        <h1 id="logo">Edit Profile</h1>
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="message">{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+      <form method="POST">
+        <div class="input-container">
+          {% csrf_token %}
+          {{ form.as_p }}
+        </div>
+        <div class="button-frame">
+          <button class="button" type="submit">Submit</button>
+        </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}
