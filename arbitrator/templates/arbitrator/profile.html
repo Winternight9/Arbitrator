@@ -1,0 +1,27 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Profile
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="../../static/css/index.css" />
+{% endblock %}
+
+{% if user.is_authenticated %}
+{% block content %}
+<a href="{% url "arbitrator:editprofile" %}">Edit</a>
+    <div class="container1">
+        <h1>Profile</h1>
+        <p>Username: {{ user }}</p>
+        <p>First name: {{ user.first_name }}</p>
+        <p>Last name: {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>  
+    </div>
+    <a href="{% url "arbitrator:logout" %}">Logout</a>
+{% endblock %}
+{% else %}    
+  Please <a href={% url 'arbitrator:login' %} >login </a> to view your profile
+{% endif %}
