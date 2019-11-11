@@ -1,10 +1,18 @@
 import sys
 
 from django.shortcuts import render, reverse, redirect
+from arbitrator.forms import LoginForm
 
 
 def indexView(request):
-    return render(request, 'arbitrator/index.html')
+    form = LoginForm()
+    context = {
+        'form':  form
+    }
+    if request.user.is_authenticated:
+        return redirect(reverse("arbitrator:test"))
+    else:
+        return render(request, 'arbitrator/login.html', context)
 
 
 sys.modules[__name__] = indexView
