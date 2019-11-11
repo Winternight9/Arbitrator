@@ -12,10 +12,6 @@ def loginView(request):
     context = {
         'form':  form
     }
-    if request.user.is_authenticated:
-        return redirect(reverse("arbitrator:test"))
-    else:
-        return render(request, 'arbitrator/login.html', context)
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
