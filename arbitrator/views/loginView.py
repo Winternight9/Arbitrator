@@ -4,10 +4,14 @@ from django.shortcuts import render, reverse, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-from ..forms import LoginForm
+from arbitrator.forms import LoginForm
 
 
 def loginView(request):
+    form = LoginForm()
+    context = {
+        'form':  form
+    }
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -21,12 +25,8 @@ def loginView(request):
         else:
             messages.error(request, f"Username or password is not valid")
 
-    form = LoginForm()
-    context = {
-        'form':  form
-    }
-
     return render(request, 'arbitrator/login.html', context)
 
 
 sys.modules[__name__] = loginView
+    
