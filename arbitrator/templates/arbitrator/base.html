@@ -9,8 +9,11 @@
       href="https://fonts.googleapis.com/css?family=Nunito:600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../static/css/background.css" />
-    <link rel="stylesheet" href="../../static/css/font.css" />
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'arbitrator/css/background.css' %}" />
+    <link rel="stylesheet" href="{% static 'arbitrator/css/font.css' %}" />
     {% block css %} {% endblock %}
   </head>
   {% block content %} {% endblock %}
