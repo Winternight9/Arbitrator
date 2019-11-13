@@ -12,7 +12,7 @@ def indexView(request):
     if request.user.is_authenticated:
         return redirect(reverse("arbitrator:test"))
     else:
-        return render(request, 'arbitrator/login.html', context)
+        return render(request, 'arbitrator/index.html', context)
 
 
 sys.modules[__name__] = indexView
