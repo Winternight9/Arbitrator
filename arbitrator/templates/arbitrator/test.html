@@ -11,6 +11,10 @@
 {% endblock %}
 
 {% block content %}
+
+  <a href="{% url "arbitrator:profiles" %}">Profile</a>
+  <br>
+  <a href="{% url "arbitrator:logout" %}">Logout</a>
   <div class="container">
     <div class="frame center">
         {% if messages %}
