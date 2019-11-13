@@ -16,6 +16,7 @@ def editProfile(request):
         form = EditProfileForm(instance =request.user)
         args = {'form' : form}
 
-        return render(request, 'arbitrator/editProfile.html', args)
+        return render(request, 'arbitrator/editProfile.html', args)        
+
 
 sys.modules[__name__] = editProfile
