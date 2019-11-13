@@ -1,11 +1,11 @@
 .topnav {
-    background-color: purple;
+    background-color: rgb(255, 204, 255);
     overflow: hidden;
   }
   
 .topnav a {
     float: left;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -13,7 +13,7 @@
   }
   
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: whitesmoke;
     color: black;
   }
 
