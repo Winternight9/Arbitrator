@@ -12,6 +12,7 @@ def loginView(request):
     context = {
         'form':  form
     }
+
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
