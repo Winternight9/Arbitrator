@@ -13,5 +13,8 @@ class Vote(models.Model):
     def __str__(self):
         return f"voted choice: {self.choice} by: {self.owner}"
 
+    class Meta:
+        app_label = "arbitrator"
+
 
 sys.modules[__name__] = Vote
