@@ -11,7 +11,7 @@ def editProfile(request):
         if form.is_valid():
             form.save()
 
-            return redirect(reverse("arbitrator:profiles"))
+            return redirect(reverse("arbitrator:profile"))
     else:
         form = EditProfileForm(instance =request.user)
         args = {'form' : form}
