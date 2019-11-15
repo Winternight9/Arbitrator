@@ -11,5 +11,8 @@ class ArbitratorUser(models.Model):
     def __str__(self):
         return self.user
 
+    class Meta:
+        app_label = "arbitrator"
+
 
 sys.modules[__name__] = ArbitratorUser
