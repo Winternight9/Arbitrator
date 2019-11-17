@@ -17,14 +17,64 @@ function addQuestion() {
 
 function addChoice(clickedElement) {
   const questionContainer = clickedElement.parentElement.parentElement;
-  const choiceContainer = questionContainer.getElementsByClassName("choice-container")[0];
+  const choiceContainer = questionContainer.getElementsByClassName(
+    "choice-container"
+  )[0];
   const choiceField = createTextBox();
 
-  choiceField.placeholder = "choice label"
+  choiceField.placeholder = "choice label";
 
   choiceContainer.append(choiceField);
 
   choiceField.focus();
+}
+
+function getPollData() {
+  const poll = {};
+
+  poll["name"] = getPollName();
+  poll["questions"] = getPollQuestions();
+
+  return poll;
+}
+
+function getPollName() {
+  const pollName = document.getElementById("poll-name-field").value;
+
+  return pollName;
+}
+
+function getPollQuestions() {
+  const questionsContainer = document.getElementById("question-container");
+
+  return Array.from(questionsContainer.children).map(questionContainer => {
+    const questionLabel = questionContainer.firstChild.getElementsByClassName(
+      "input"
+    )[0].value;
+    const isChoiceQuestion = questionContainer.children.length > 1;
+    const questionType = isChoiceQuestion ? "choice" : "text";
+    const questionData = {
+      label: questionLabel,
+      type: questionType
+    };
+
+    if (isChoiceQuestion) {
+      const choices = getChoicesDataInContainer(questionContainer);
+      const multipleSelection =
+        questionContainer.lastChild.lastChild.firstChild.checked;
+
+      questionData["multipleSelection"] = multipleSelection;
+      questionData["choices"] = choices;
+    }
+
+    return questionData;
+  });
+}
+
+function getChoicesDataInContainer(container) {
+  return Array.from(container.getElementsByClassName("input")).map(
+    choice => choice.value
+  );
 }
 
 function createQuestion(type) {
@@ -89,9 +139,9 @@ function createMultipleSelectionOption() {
 
 function createQuestionContainer() {
   const container = document.createElement("div");
-  
+
   container.className = "question input-container";
-  
+
   return container;
 }
 
@@ -105,25 +155,25 @@ function createLabelContainer() {
 
 function createChoiceContainer() {
   const container = document.createElement("div");
-  
+
   container.className = "choice-container";
-  
+
   return container;
 }
 
 function createChoiceOptionContainer() {
   const container = document.createElement("div");
-  
+
   container.className = "option-container";
-  
+
   return container;
 }
 
 function createMultipleSelectionOptionContainer() {
   const container = document.createElement("div");
-  
+
   container.className = "multiple-selection-option-container";
-  
+
   return container;
 }
 
