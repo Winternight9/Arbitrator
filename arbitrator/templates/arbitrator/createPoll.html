@@ -1,0 +1,46 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator - Create Poll
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/createPoll.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="frame center">
+        <h1 id="current-route">Create Poll</h1>
+        <div class="input-container">
+            <label>Name</label>
+          </br>
+          <input id="poll-name-field" class="input" type="text" name="poll-name">
+        </div>
+        <div id='question-container'></div>
+        <div class="add-question-container">
+          <div class="add-question-frame" >
+            <label>
+              Question with 
+            </label>
+            <select name="new-question-type">
+              <option name="text">text</option>
+              <option name="choice">choice </option>
+            </select>
+            <button class="add-button" onclick="addQuestion()">Add</button>
+          </div>
+          <button class="create-button" onclick="create()">create</button>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    const username = '{{ user.id }}';
+  </script>
+  <script src="{% static 'arbitrator/js/createPoll.js' %}"></script>
+{% endblock %}

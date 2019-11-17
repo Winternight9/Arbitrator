@@ -15,7 +15,7 @@
   border-radius: 16px;
 }
 
-#logo {
+#current-route {
   margin: 12px 24px;
   cursor: default;
 }
@@ -35,6 +35,7 @@
   font-size: 16px;
   padding: 4px;
   font-family: "Nunito", sans-serif;
+  outline: none;
 }
 
 label {
@@ -63,6 +64,7 @@ label {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #3e3e3e;
+  outline: none;
 }
 
 .button:hover {
