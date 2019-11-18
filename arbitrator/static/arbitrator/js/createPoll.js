@@ -29,6 +29,26 @@ function addChoice(clickedElement) {
   choiceField.focus();
 }
 
+function submitPoll() {
+  const url = "/arbitrator/createPoll";
+  const pollData = JSON.stringify(getPollData());
+
+  $.ajax({
+    url: url,
+    method: "post",
+    headers: { "X-CSRFToken": CSRF_TOKEN },
+    data: pollData,
+    success: response => {
+      alert("Poll Created");
+
+      window.location = response;
+    },
+    error: error => {
+      console.log(error);
+    }
+  });
+}
+
 function getPollData() {
   const poll = {};
 
