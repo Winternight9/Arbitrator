@@ -7,7 +7,7 @@ from arbitrator.forms import LoginForm
 def indexView(request):
     form = LoginForm()
     context = {
-        'form':  form 
+        'form':  form
     }
     if request.user.is_authenticated:
         return redirect(reverse("arbitrator:test"))

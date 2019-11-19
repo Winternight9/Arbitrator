@@ -59,18 +59,6 @@ class ViewsTest(TestCase):
             {'username':self.user.username, 'password':self.userpass})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('arbitrator:test'))
-    
-
-    # def test_editprofile(self):
-    #     c = self.client
-    #     response = c.get(path='/profile/edit/')
-    #     status = response.status_code
-    #     self.assertEqual(status, 200)
-
-
-    # def test_login(self):
-    #     c= self.client
-        
 
 
 
