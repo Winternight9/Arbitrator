@@ -17,14 +17,11 @@ from django.contrib import admin
 from django.urls import path,include,reverse
 from django.http import HttpResponseRedirect
 
-def redirect_to_homepage(request):
-    """ Redirect to app index """
-    return HttpResponseRedirect(reverse('arbitrator:index'))
 
 urlpatterns = [
-    path('arbitrator/', include('arbitrator.urls')),
+    # path('arbitrator/', include('arbitrator.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', redirect_to_homepage),
+    path('', include('arbitrator.urls')),
     path('', include('social_django.urls', namespace="oauth")),
 ]
