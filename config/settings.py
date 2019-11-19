@@ -12,10 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 from decouple import config
 import os
 
-if 'HEROKU' in os.environ:
-    import django_heroku
-    django_heroku.settings(locals())
-    
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -138,6 +135,9 @@ STATICFILES_DIRS = (
     BASE_DIR + '/arbitrator/static/' ,
 )
 
-
+if 'I_AM_HEROKU' in os.environ:
+    # Configure Django App for Heroku.
+    import django_heroku
+    django_heroku.settings(locals())
 
 # pip install django-heroku gunicorn
