@@ -59,21 +59,3 @@ class ViewsTest(TestCase):
             {'username':self.user.username, 'password':self.userpass})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('arbitrator:test'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
