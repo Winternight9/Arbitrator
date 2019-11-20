@@ -1,0 +1,137 @@
+.container {
+  padding-top: 16px;
+}
+
+.frame {
+  width: 80%;
+  padding: 16px 16px;
+  justify-content: center;
+}
+
+.small-margin-top {
+  margin-top: 8px;
+}
+
+.input-container {
+  background: #e4e4e4;
+  margin: 0;
+  text-align: left;
+}
+
+.choice-container {
+  margin: 8px 0;
+  padding: 0 16px;
+}
+
+.option-container {
+  display: flex;
+  margin: 16px;
+  margin-bottom: 0;
+}
+
+.add-question-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-question-frame {
+  margin: 16px 8px;
+  padding-left: 8px;
+  background: white;
+  border-radius: 4px;
+  border: solid 1px #d4d4d4;
+  margin-left: 0;
+}
+
+.add-question-frame > label {
+  font-size: 16px;
+}
+
+.add-choice-button {
+  background: #ff7070;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.create-button {
+  margin: 16px 0;
+  border-radius: 3px;
+}
+
+.input {
+  margin: 0;
+  background: #e4e4e4;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px #3e3e3e dashed;
+  width: 100%;
+}
+
+select, button {
+  font-family: 'Nunito', sans-serif;
+  color: #3e3e3e;
+  font-size: 16px;
+  margin: 0;
+  outline: none;
+}
+
+select {
+  border: none;
+  background: white;
+  cursor: pointer;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+button {
+  padding: 4px 8px;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: #ff7070;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+button:active {
+  background: #ff8888;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.multiple-selection-option-container {
+  background: #ff7070;
+  border-radius: 3px;
+  padding: 0 4px;
+}
+
+.multiple-selection-option-container > label {
+  margin: 0 4px;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 480px) {
+  #current-route {
+    font-size: 24px;
+  }
+
+  select {
+    border: none;
+    background: white;
+    cursor: pointer;
+    margin-left: -4px;
+    margin-right: -16px;
+  }
+
+  .option-container {
+    margin: 16px 0;
+  }
+  
+  .multiple-selection-option-container > label, .add-choice-button {
+    font-size: 10px;
+  }
+}

@@ -7,13 +7,13 @@
 {% load staticfiles %}
 
 {% block css %}
-  <link rel="stylesheet" href="../../static/css/login.css" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
 {% endblock %}
 
 {% block content %}
   <div class="container">
     <div class="frame center">
-        <h1 id="logo">Arbitrator Sign up</h1>
+        <h1 id="current-route">Arbitrator Sign up</h1>
       {% if messages %}
         {% for msg in messages %}
           <p class="message">{{msg}}</p>

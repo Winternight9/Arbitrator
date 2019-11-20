@@ -6,28 +6,47 @@
 <p>The event organizers control who can view and submit an evaluation, and the time interval during which submission is allowed.  The organizers can elect to allow self-registration for open events. </p>
 
 ---
-## **Requirements**
+## **Prerequisite**
 * `Python 3.6` or newer
-* `Django 2.1.2` or newer
+* `Django 2.2.6` or newer
 
 ---
-## **How to run**
+## **How to run on local**
 
-Firts install required packages using the following command:
-
-```shell script
-pip install -r requirements.txt
+First create .env file to hide secret keys. In .env file should have these following:
 ```
+DEBUG =True
+SECRET_KEY =YOURSECRETKEY
+SOCIAL_AUTH_POSTGRES_JSONFIELD =True
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =YOURGOOLEAPIKEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET =YOURGOOLEAPISECRETKEY
+TIME_ZONE =YOURTIMEZONE
+```
+
+Second create virtualenv in the directory next activate virtualenv:
+```
+virtualenv venv
+source venv/bin/activate
+```
+
+Next install required packages using the following command:
+```
+(venv) pip install -r requirements.txt 
+```
+
 Create the database using the following command:
-
-```shell script
-python3 manage.py migrate
+```
+(venv) python manage.py migrate
 ```
 
-Use this command to start server:
+Collects static files from each of your applications
+```
+(venv) python manage.py collectstatic
+```
 
-```shell script
-python3 manage.py runserver
+Last using this command to start the server:
+```
+(venv) python manage.py runserver
 ```
 
 ---
@@ -39,9 +58,11 @@ python3 manage.py runserver
 |[Siwat Ponpued](https://github.com/KornSiwat) |6110546640 
 
 ---
-## **Developer Resources**
+## **Project Documentation**
 
 - [Project proposal](https://docs.google.com/document/d/1kTY7dEEr1uGpcEcjVZOhP0TgsJtu_pWC3rOKDfO9P_s/edit?usp=sharing)
-- [Github issuec tracker](https://github.com/Winternight9/Arbitrator/issues)
 - Task Board on [Trello](https://trello.com/b/VRIh1G2A/arbitrator)
-- [Iteration Plan](https://docs.google.com/document/d/1fXLNDfrdQ5OEX7WIRAhF1MOurH1jjK2mBHLmrH1Qhdc/edit?usp=sharing)
+- [Iteration plan](https://docs.google.com/document/d/1fXLNDfrdQ5OEX7WIRAhF1MOurH1jjK2mBHLmrH1Qhdc/edit?usp=sharing)
+- [Iteration script](https://docs.google.com/document/d/1SIVhFa8ENOlhmjqFwTwIH4pjj2gcpML4t7fsYj02RDk/edit?usp=sharing)
+- [Code review script & checklist](https://docs.google.com/document/d/1yKp1QEeML1Y40vKWtDQXcF1b86ywMhAMUPt1jFsnZ90/edit?usp=sharing)
+- [Github issuec tracker](https://github.com/Winternight9/Arbitrator/issues)

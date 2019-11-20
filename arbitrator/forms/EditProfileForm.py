@@ -5,7 +5,6 @@ from django.contrib.auth.forms import UserChangeForm
 
 
 class EditProfileForm(UserChangeForm):
-
     class Meta:
         model = User
         fields = (
@@ -16,4 +15,3 @@ class EditProfileForm(UserChangeForm):
 
 
 sys.modules[__name__] = EditProfileForm
-    
