@@ -1,10 +1,10 @@
 import sys
-import enum
+from enum import Enum
 
 
-class QuestionType(enum):
-    Text = 0
-    Choice = 1
+class QuestionType(Enum):
+    Text = 'text'
+    Choice = 'choice'
 
 
 sys.modules[__name__] = QuestionType

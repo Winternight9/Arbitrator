@@ -30,7 +30,7 @@ function addChoice(clickedElement) {
 }
 
 function submitPoll() {
-  const url = "/arbitrator/createPoll";
+  const url = "/createPoll";
   const pollData = JSON.stringify(getPollData());
 
   $.ajax({
