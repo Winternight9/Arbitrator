@@ -1,7 +1,7 @@
 from django.urls import path
 
 from django.urls import include
-from .views import indexView, loginView, logoutView, registrationView, test, profileView, editProfile
+from .views import indexView, loginView, logoutView, registrationView, test, profileView, editProfileView, createPollView
 from arbitrator.auth import createArbitratorUserFromGoogleAccount
 
 
@@ -14,10 +14,11 @@ urlpatterns = [
     path('logout/', logoutView, name='logout'),
     path('test/', test, name='test'),
     path('profile/', profileView, name='profile'),
-    path('profile/edit/', editProfile, name='editProfile'),
+    path('profile/edit/', editProfileView, name='editProfile'),
     path(
         'createArbitratorUserFromGoogleAccount',
         createArbitratorUserFromGoogleAccount,
         name='createArbitratorUserFromGoogleAccount'
     ),
+    path('createPoll', createPollView, name='createPoll')
 ]

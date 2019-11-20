@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class ArbitratorUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pub_date = models.DateTimeField('date published', blank=True, null=True)
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.user
