@@ -39,8 +39,6 @@ function submitPoll() {
     headers: { "X-CSRFToken": CSRF_TOKEN },
     data: pollData,
     success: response => {
-      alert("Poll Created");
-
       window.location = response;
     },
     error: error => {
@@ -79,7 +77,8 @@ function getPollQuestions() {
     };
 
     if (isChoiceQuestion) {
-      const choices = getChoicesDataInContainer(questionContainer);
+      const choicesContainer = questionContainer.getElementsByClassName("choice-container")[0];
+      const choices = getChoicesDataInContainer(choicesContainer);
       const multipleSelection =
         questionContainer.lastChild.lastChild.firstChild.checked;
 

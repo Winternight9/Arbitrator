@@ -18,7 +18,9 @@ def createPollView(request):
                 request,
                 "poll created"
             )
-        except:
+        except Exception as error:
+            print(error)
+
             messages.error(
                 request,
                 "poll error please try again"
@@ -39,27 +41,32 @@ def createPollView(request):
 
 
 def savePoll(request):
-    pollData = json.loads(request.body.decode("utf-8"))
-    pollLabel = pollData['name']
-    pollQuestions = pollData['questions']
+    poll_data = json.loads(request.body.decode("utf-8"))
+    poll_label = poll_data['name']
+    poll_questions = poll_data['questions']
 
-    if pollLabel == "":
+    if poll_label == "":
         raise ValueError("PollNameIsNotValid")
 
-    if not isinstance(pollLabel, str):
+    if not isinstance(poll_label, str):
         raise TypeError("PollNameTypeError")
 
     poll_db = Poll(
         owner=ArbitratorUser.objects.get(
             user=request.user),
-        label=pollLabel)
+        label=poll_label)
 
     poll_db.save()
 
-    for question in pollQuestions:
+    for question in poll_questions:
         question_label = question['label']
         question_type = QuestionType(question['type'])
-        question_multiple_selection = bool(question['multipleSelection'])
+
+        if question_label == "":
+            raise ValueError("QuestionNameIsNotValid")
+
+        if not isinstance(question_label, str):
+            raise TypeError("QuestionNameTypeError")
 
         if question_type not in [QuestionType.Text, QuestionType.Choice]:
             raise ValueError('QuestionTypeIsNotValid')
@@ -68,13 +75,22 @@ def savePoll(request):
             label=question_label,
             type=question_type,
             poll=poll_db,
-            multiple_selection=question_multiple_selection
         )
 
         question_db.save()
 
         if question_type == QuestionType.Choice:
-            for choice in question['choices']:
+            choices = question['choices']
+
+            if choices == []:
+                raise ValueError('ChoiceQuestionHasNoChoice')
+
+            question_multiple_selection = bool(question['multipleSelection'])
+            question_db.multiple_selection = multiple_selection = question_multiple_selection
+
+            question_db.save()
+
+            for choice in choices:
                 choice_db = Choice(
                     label=choice,
                     question=question_db
