@@ -11,20 +11,15 @@
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-        {% include 'includes/navigationbar.html' with navigationbar=navigationbar %}
-=======
-
-  <a href="{% url "arbitrator:profiles" %}">Profile</a>
-  <br>
-  <a href="{% url "arbitrator:logout" %}">Logout</a>
->>>>>>> develop
+  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
   <div class="container">
     <div class="frame center">
         {% if messages %}
-        {% for msg in messages %}
-          <p class="message">{{msg}}</p>
-        {% endfor %}
+          <div class="message-container">
+            {% for msg in messages %}
+              <p class="message">{{msg}}</p>
+            {% endfor %}
+        </div>
       {% endif %}
     </div>
   </div>
