@@ -7,11 +7,18 @@
 {% load staticfiles %}
 
 {% block css %}
-  <link rel="stylesheet" href="../../static/css/login.css" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
         {% include 'includes/navigationbar.html' with navigationbar=navigationbar %}
+=======
+
+  <a href="{% url "arbitrator:profiles" %}">Profile</a>
+  <br>
+  <a href="{% url "arbitrator:logout" %}">Logout</a>
+>>>>>>> develop
   <div class="container">
     <div class="frame center">
         {% if messages %}

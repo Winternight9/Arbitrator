@@ -39,8 +39,11 @@ python3 manage.py runserver
 |[Siwat Ponpued](https://github.com/KornSiwat) |6110546640 
 
 ---
-## **Developer Resources**
+## **Project Documentation**
 
 - [Project proposal](https://docs.google.com/document/d/1kTY7dEEr1uGpcEcjVZOhP0TgsJtu_pWC3rOKDfO9P_s/edit?usp=sharing)
-- [Github issuec tracker](https://github.com/Winternight9/Arbitrator/issues)
 - Task Board on [Trello](https://trello.com/b/VRIh1G2A/arbitrator)
+- [Iteration plan](https://docs.google.com/document/d/1fXLNDfrdQ5OEX7WIRAhF1MOurH1jjK2mBHLmrH1Qhdc/edit?usp=sharing)
+- [Iteration script](https://docs.google.com/document/d/1SIVhFa8ENOlhmjqFwTwIH4pjj2gcpML4t7fsYj02RDk/edit?usp=sharing)
+- [Code review script & checklist](https://docs.google.com/document/d/1yKp1QEeML1Y40vKWtDQXcF1b86ywMhAMUPt1jFsnZ90/edit?usp=sharing)
+- [Github issuec tracker](https://github.com/Winternight9/Arbitrator/issues)

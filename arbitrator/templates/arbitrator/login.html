@@ -7,7 +7,7 @@
 {% load staticfiles %}
 
 {% block css %}
-  <link rel="stylesheet" href="../../static/css/login.css" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -24,7 +24,7 @@
           {% csrf_token %}
           {{ form.as_p }}
           <a href="{% url "oauth:begin" "google-oauth2" %}">
-            <img id="google-signin-button" src="../../static/images/googleSigninButton.png">
+            <img id="google-signin-button" src="{% static 'arbitrator/images/googleSigninButton.png' %}">
           </a>
         </div>
         <div class="button-frame">
