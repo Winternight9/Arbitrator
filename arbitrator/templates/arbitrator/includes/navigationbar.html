@@ -1,0 +1,10 @@
+{% load staticfiles %} {% block css %}
+<link rel="stylesheet" href="{% static "arbitrator/css/navigationbar.css" %}"/> {% endblock %}
+
+<div class="topnav-container">
+    <div class="topnav">
+        <a class="active" href="{% url "arbitrator:test" %}">Home</a>
+        <a href="{% url "arbitrator:profile" %}">Profile</a>
+        <a href="{% url "arbitrator:logout" %}">Logout</a>
+    </div>
+</div>
