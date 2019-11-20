@@ -12,9 +12,10 @@
 
 {% if user.is_authenticated %}
 {% block content %}
-<a href="{% url "arbitrator:editProfile" %}">Edit</a>
+  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
     <div class="container1">
-        <h1>Profile</h1>
+        <h1 id="profile">Profile</h1>
+        <a id="edit" href="{% url "arbitrator:editProfile" %}">Edit</a>
         <p>Username: {{ user }}</p>
         <p>First name: {{ user.first_name }}</p>
         <p>Last name: {{ user.last_name }}</p>
