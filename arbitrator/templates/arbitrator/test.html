@@ -11,17 +11,15 @@
 {% endblock %}
 
 {% block content %}
-  <a href="{% url "arbitrator:profile" %}">Profile</a>
-  <br>
-  <a href="{% url "arbitrator:createPoll" %}">Create Poll</a>
-  <br>
-  <a href="{% url "arbitrator:logout" %}">Logout</a>
+  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
   <div class="container">
     <div class="frame center">
         {% if messages %}
-        {% for msg in messages %}
-          <p class="message">{{msg}}</p>
-        {% endfor %}
+          <div class="message-container">
+            {% for msg in messages %}
+              <p class="message">{{msg}}</p>
+            {% endfor %}
+        </div>
       {% endif %}
     </div>
   </div>

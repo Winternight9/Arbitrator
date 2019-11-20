@@ -20,6 +20,11 @@
   cursor: default;
 }
 
+.message-container {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
 .message {
   font-size: 12px;
   color: red;
