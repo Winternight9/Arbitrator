@@ -106,6 +106,8 @@ venv.bak/
 # vscode config
 .vscode/
 
+# files config 
 .DS_Store/
 
-~/.DS_Store
+# collectstatic
+staticfiles/
