@@ -14,7 +14,7 @@ urlpatterns = [
     path('logout/', logoutView, name='logout'),
     path('test/', test, name='test'),
     path('profile/', profileView, name='profile'),
-    path('profile/edit/', editProfile, name='editProfile'),
+    path('profile/edit/', editProfileView, name='editProfile'),
     path(
         'createArbitratorUserFromGoogleAccount',
         createArbitratorUserFromGoogleAccount,
