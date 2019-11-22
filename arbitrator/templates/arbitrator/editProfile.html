@@ -4,6 +4,12 @@
   Arbitrator - Edit Profile
 {% endblock %}
 
+{% load staticfiles %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'arbitrator/css/index.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/editprofile.css' %}" />
+{% endblock %}
+
 {% block content %}
   {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
   <div class="container">
