@@ -1,7 +1,22 @@
 #id_password {
     visibility: hidden;
+    position: absolute;
+    right: 1000px;
   }
 
 .helptext {
     visibility: hidden;
+    position: absolute;
+    right: 1000px;
   }
+
+label[for="id_password"] { 
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}  
