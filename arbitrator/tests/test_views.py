@@ -41,7 +41,7 @@ class ViewsTest(TestCase):
     def test_homepage_template(self):
         c = self.client
         response = c.get(path='/test/')
-        self.assertTemplateUsed(response, 'arbitrator/test.html')
+        self.assertTemplateUsed(response, 'arbitrator/home.html')
 
     def test_profile(self):
         c = self.client
@@ -58,4 +58,4 @@ class ViewsTest(TestCase):
         response = self.client.post('/login/',
             {'username':self.user.username, 'password':self.userpass})
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('arbitrator:test'))
+        self.assertRedirects(response, reverse('arbitrator:home'))

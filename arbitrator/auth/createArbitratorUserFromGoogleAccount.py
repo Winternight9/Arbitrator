@@ -17,7 +17,7 @@ def createArbitratorUserFromGoogleAccount(request):
 
         messages.success(request, f"{request.user.email} SignIn complete.\nWelcome to Arbitrator")
 
-        return redirect(reverse("arbitrator:test"))
+        return redirect(reverse("arbitrator:home"))
 
     except ArbitratorUser.DoesNotExist:
         new_user = ArbitratorUser(user=user)
@@ -25,7 +25,7 @@ def createArbitratorUserFromGoogleAccount(request):
 
         messages.success(request, f"Account: {request.user.email} created.\nWelcome to Arbitrator")
 
-        return redirect(reverse("arbitrator:test"))
+        return redirect(reverse("arbitrator:home"))
 
 
 sys.modules[__name__] = createArbitratorUserFromGoogleAccount
