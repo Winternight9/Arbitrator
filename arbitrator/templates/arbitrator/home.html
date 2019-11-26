@@ -1,7 +1,7 @@
 {% extends "arbitrator/base.html" %}
 
 {% block title %}
-  Arbitrator - Success
+  Arbitrator - Home
 {% endblock %}
 
 {% load staticfiles %}
@@ -11,16 +11,13 @@
 {% endblock %}
 
 {% block content %}
-  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
+  {% include "arbitrator/includes/navigationbar.html" %}
   <div class="container">
     <div class="frame center">
-        {% if messages %}
-          <div class="message-container">
-            {% for msg in messages %}
-              <p class="message">{{msg}}</p>
-            {% endfor %}
-        </div>
-      {% endif %}
     </div>
   </div>
+{% endblock %}
+
+{% block script %}
+  {% include "arbitrator/includes/messageAlert.html" with messages=messages %}
 {% endblock %}
