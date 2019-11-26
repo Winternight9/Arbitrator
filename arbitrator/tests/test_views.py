@@ -34,13 +34,13 @@ class ViewsTest(TestCase):
 
     def test_homepage(self):
         c = self.client
-        response = c.get(path='/test/')
+        response = c.get(path='/home/')
         status = response.status_code
         self.assertEqual(status, 200)
 
     def test_homepage_template(self):
         c = self.client
-        response = c.get(path='/test/')
+        response = c.get(path='/home/')
         self.assertTemplateUsed(response, 'arbitrator/home.html')
 
     def test_profile(self):
