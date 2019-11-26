@@ -7,13 +7,32 @@
 {% load staticfiles %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/home.css' %}" />
 {% endblock %}
 
 {% block content %}
   {% include "arbitrator/includes/navigationbar.html" %}
   <div class="container">
-    <div class="frame center">
+    <div class="poll-container">
+      <div class="poll-header-container">
+        <h1>All Polls</h1>
+      </div>
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Submitted</th>
+          <th>Owner</th>
+        </tr>
+        {% for poll in polls %}
+        <tr>
+          <td>{{poll.label}}</td>
+          <td>{{poll.created_date}}</td>
+          <td>{{poll.total_submission}}</td>
+          <td>{{poll.owner.user.get_username}}</td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
   </div>
 {% endblock %}

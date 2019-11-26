@@ -32,7 +32,7 @@
 .frame {
   text-align: center;
   padding: 0 0;
-  background: #e4e4e4;
+  background: var(--frame-grey);
   border-radius: 16px;
   width: 60%;
   box-shadow: 0 0 3px rgb(104, 104, 104);;

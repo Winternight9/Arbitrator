@@ -12,6 +12,9 @@ class Poll(models.Model):
     def __str__(self):
         return self.label
 
+    def total_submission(self):
+        return 0
+
     class Meta:
         app_label = "arbitrator"
 
