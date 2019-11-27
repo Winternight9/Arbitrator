@@ -15,3 +15,10 @@
   border: solid rgb(202, 202, 202);
   border-radius: 4px;
 }
+
+.vote-button {
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: var(--frame-dark-grey);
+  cursor: pointer;
+}
