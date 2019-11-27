@@ -1,2 +1,24 @@
-#profile {display:inline;}
-#edit {display:inline; padding:8px; font-size: 20px;}
+.frame {
+  width: fit-content;
+  padding-top: 8px;
+}
+
+.left-margin {
+  margin-left: 16px;
+}
+
+.detail-container {
+  background: #f6f6f6;
+  margin: 8px 0 0 0;
+  text-align: start;
+  padding: 12px 48px;
+  font-size: 20px;
+}
+
+.current-route {
+  margin: 0;
+}
+
+.button {
+  text-decoration: none;
+}

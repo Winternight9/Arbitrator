@@ -19,4 +19,8 @@ label[for="id_password"] {
     padding: 0;
     position: absolute;
     width: 1px;
-}  
+}
+
+.frame {
+  width: 40%;
+}
