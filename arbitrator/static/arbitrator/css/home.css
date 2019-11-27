@@ -8,11 +8,12 @@
 
 .poll-container > table {
   border-collapse: collapse;
+  background: #f4f4f4;
 }
 
 .poll-container > table, th, td {
   padding: 4px;
-  border: solid rgb(202, 202, 202);
+  border: solid var(--frame-grey);
   border-radius: 4px;
 }
 
