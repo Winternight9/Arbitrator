@@ -12,10 +12,15 @@
 
     {% load staticfiles %}
 
+    <link rel="stylesheet" href="{% static 'arbitrator/css/basic.css' %}" />
     <link rel="stylesheet" href="{% static 'arbitrator/css/background.css' %}" />
     <link rel="stylesheet" href="{% static 'arbitrator/css/font.css' %}" />
     {% block css %} {% endblock %}
   </head>
-  {% block content %} {% endblock %}
+
+  <body>
+    {% block content %} {% endblock %}
+  </body>
+  
   {% block script %} {% endblock %}
 </html>

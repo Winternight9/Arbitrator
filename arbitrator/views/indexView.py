@@ -10,7 +10,7 @@ def indexView(request):
         'form':  form
     }
     if request.user.is_authenticated:
-        return redirect(reverse("arbitrator:test"))
+        return redirect(reverse("arbitrator:home"))
     else:
         return render(request, 'arbitrator/index.html', context, status=200)
 
