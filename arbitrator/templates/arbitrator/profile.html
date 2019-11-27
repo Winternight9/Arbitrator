@@ -7,21 +7,28 @@
 {% load staticfiles %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static 'arbitrator/css/index.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/profile.css' %}" />
 {% endblock %}
 
 {% if user.is_authenticated %}
 {% block content %}
-<a href="{% url "arbitrator:editProfile" %}">Edit</a>
-    <div class="container1">
-        <h1>Profile</h1>
+  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
+  <div class="container">
+    <div class="frame center">
+      <h1 class="current-route">Profile</h1>
+      <div class="detail-container">
         <p>Username: {{ user }}</p>
         <p>First name: {{ user.first_name }}</p>
         <p>Last name: {{ user.last_name }}</p>
         <p>Email: {{ user.email }}</p>  
+      </div>
+      <div class="button-frame button-container">
+        <a class="button" href="{% url "arbitrator:editProfile" %}">Edit</a>
+        <a class="button" style="margin-left: 32px" href="{% url "arbitrator:logout" %}">Log out</a>
+      </div>{% endblock %}
     </div>
-    <a href="{% url "arbitrator:logout" %}">Logout</a>
-{% endblock %}
+  </div>
 {% else %}    
   Please <a href={% url 'arbitrator:login' %} >login </a> to view your profile
 {% endif %}
