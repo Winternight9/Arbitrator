@@ -7,7 +7,7 @@ from django.contrib.auth import logout
 def logoutView(request):
     logout(request)
 
-    return redirect('arbitrator:index')
+    return redirect('arbitrator:home')
 
 
 sys.modules[__name__] = logoutView

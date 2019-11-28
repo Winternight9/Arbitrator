@@ -25,7 +25,7 @@ def registrationView(request):
 
             messages.success(request, f"Account: {username} created.\nWelcome to Arbitrator")
 
-            return redirect(reverse("arbitrator:test"))
+            return redirect(reverse("arbitrator:home"))
     else:
         form = RegistrationForm()
 

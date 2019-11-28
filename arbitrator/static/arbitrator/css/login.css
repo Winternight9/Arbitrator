@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  padding-top: 7%;
   text-align: center;
 }
 
@@ -9,10 +8,12 @@
 }
 
 .frame {
+  margin-top: 7%;
   text-align: center;
-  background: #e4e4e4;
+  background: var(--frame-grey);
   box-shadow: 0 0 3px rgb(104, 104, 104);
   border-radius: 16px;
+  width: fit-content;
 }
 
 #current-route {
@@ -61,7 +62,8 @@ label {
 .button {
   background: none;
   text-align: center;
-  margin: 16px 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
   position: inherit;
   border-radius: 5px;
   border: 0;
@@ -87,4 +89,9 @@ label {
   text-decoration: none;
   color: #3e3e3e;
   cursor: pointer;
+}
+
+.helptext {
+  position: absolute;
+  visibility: hidden;
 }

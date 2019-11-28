@@ -4,7 +4,6 @@
 
 .frame {
   width: 80%;
-  padding: 16px 16px;
   justify-content: center;
 }
 
@@ -12,8 +11,13 @@
   margin-top: 8px;
 }
 
+.poll-container {
+  padding: 16px;
+  background: #f4f4f4;
+}
+
 .input-container {
-  background: #e4e4e4;
+  background: #f4f4f4;
   margin: 0;
   text-align: left;
 }
@@ -62,7 +66,7 @@
 
 .input {
   margin: 0;
-  background: #e4e4e4;
+  background: #f4f4f4;
   border: none;
   border-radius: 0;
   border-bottom: 2px #3e3e3e dashed;

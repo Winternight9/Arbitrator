@@ -26,7 +26,7 @@ def createPollView(request):
                 "poll error please try again"
             )
 
-        url = reverse('arbitrator:test')
+        url = reverse('arbitrator:home')
 
         return HttpResponse(url)
 

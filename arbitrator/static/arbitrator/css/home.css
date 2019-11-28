@@ -1,0 +1,25 @@
+.poll-container {
+  background: var(--frame-grey);
+  border-radius: 4px;
+  margin: 8px;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.poll-container > table {
+  border-collapse: collapse;
+  background: #f4f4f4;
+}
+
+.poll-container > table, th, td {
+  padding: 4px;
+  border: solid var(--frame-grey);
+  border-radius: 4px;
+}
+
+.vote-button {
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: var(--frame-dark-grey);
+  cursor: pointer;
+}

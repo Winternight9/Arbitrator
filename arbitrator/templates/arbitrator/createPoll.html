@@ -15,12 +15,15 @@
   <div class="container">
     <div class="frame center">
         <h1 id="current-route">Create Poll</h1>
-        <div class="input-container">
-            <label>Name</label>
-          </br>
-          <input id="poll-name-field" class="input" type="text" name="poll-name">
+        <div class="poll-container">
+          <div class="input-container">
+              <label>Name</label>
+            </br>
+            <input id="poll-name-field" class="input" type="text" name="poll-name">
+          </div>
+          <div id='question-container'>
+          </div>
         </div>
-        <div id='question-container'></div>
         <div class="add-question-container">
           <div class="add-question-frame" >
             <label>
@@ -38,7 +41,7 @@
   </div>
 {% endblock %}
 
-{% block script%}
+{% block script %}
   <script>
     const username = '{{ user.id }}';
     const CSRF_TOKEN = '{{ csrf_token }}';

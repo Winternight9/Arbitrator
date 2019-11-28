@@ -2,9 +2,10 @@ import sys
 
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from arbitrator.forms import EditProfileForm
 
-
+@login_required
 def editProfile(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
