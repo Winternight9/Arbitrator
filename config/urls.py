@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include,reverse
 from django.http import HttpResponseRedirect
 from django.conf.urls import handler404
-from arbitrator.views import view404
+from arbitrator.views import view404, view500
 
 
 urlpatterns = [
