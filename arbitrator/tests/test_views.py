@@ -34,7 +34,6 @@ class ViewsTest(TestCase):
         self.assertEqual(status, 200)
 
     def test_homepage_template(self):
-        self.client
         response = self.client.get(path='/home/')
         self.assertTemplateUsed(response, 'arbitrator/home.html')
 
