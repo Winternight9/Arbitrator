@@ -7,8 +7,7 @@ html, body {
 body {
   box-sizing: border-box;
   background-image: url("./../images/indexBackground.jpg");
-  background-size: auto;
+  background-size: auto 100vmax;
   background-repeat: no-repeat;
-  box-sizing: border-box;
 }
 
