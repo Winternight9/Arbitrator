@@ -2,7 +2,6 @@ from django.urls import path
 
 from django.urls import include
 from .views import indexView, loginView, logoutView, registrationView, homeView, profileView, editProfileView, createPollView
-from arbitrator.auth import createArbitratorUserFromGoogleAccount
 
 
 app_name = 'arbitrator'
@@ -15,10 +14,5 @@ urlpatterns = [
     path('home/', homeView, name='home'),
     path('profile/', profileView, name='profile'),
     path('profile/edit/', editProfileView, name='editProfile'),
-    path(
-        'createArbitratorUserFromGoogleAccount',
-        createArbitratorUserFromGoogleAccount,
-        name='createArbitratorUserFromGoogleAccount'
-    ),
     path('createPoll', createPollView, name='createPoll')
 ]
