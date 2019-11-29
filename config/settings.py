@@ -26,14 +26,14 @@ SECRET_KEY = config('SECRET_KEY', default='secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 SOCIAL_AUTH_URL_NAMESPACE = 'oauth'
 SOCIAL_AUTH_POSTGRES_JSONFIELD = config('SOCIAL_AUTH_POSTGRES_JSONFIELD',default=False, cast=bool)
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', default='secret')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET', default='secret')
-LOGIN_REDIRECT_URL = '/createArbitratorUserFromGoogleAccount'
-LOGIN_URL = '/login'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
 
 
 # Application definition
