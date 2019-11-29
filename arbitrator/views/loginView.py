@@ -21,8 +21,10 @@ def loginView(request):
 
         if user is not None:
             login(request, user)
-
-            return redirect(reverse("arbitrator:home"))
+            if request.GET.get('next'):
+                return redirect(request.GET.get('next'))
+            else:    
+                return redirect(reverse("arbitrator:home"))
         else:
             messages.error(request, f"Username or password is not valid")
 
