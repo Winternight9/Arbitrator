@@ -78,4 +78,12 @@ class ViewsTest(TestCase):
     def test_404_template(self):
         response = self.client.get(path='unknownpage')
         self.assertTemplateUsed(response, 'arbitrator/404.html')
-            
+
+    def test_edit_profile_edit(self):
+        response = self.client.post('/login/',
+            {'username':self.user.username, 'password':self.userpass})
+        self.assertRedirects(response, reverse('arbitrator:home'))
+        response = self.client.post('/profile/edit/',
+            {'first_name':'test', 'last_name':'lastname', 'email':'test@gmail.com'})
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('arbitrator:profile'))
