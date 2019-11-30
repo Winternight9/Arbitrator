@@ -11,8 +11,7 @@ install:
 
   
 script:
-  - python manage.py test arbitrator/tests
-  - coverage run manage.py test
+  - coverage run manage.py test arbitrator/tests
 
   
 after_success:
