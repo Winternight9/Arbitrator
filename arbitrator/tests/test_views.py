@@ -87,3 +87,8 @@ class ViewsTest(TestCase):
             {'first_name':'test', 'last_name':'lastname', 'email':'test@gmail.com'})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('arbitrator:profile'))
+
+    def test_invalid_id_login(self):
+        response = self.client.get('/login/')
+        self.assertTemplateUsed(response, 'arbitrator/login.html')
+        self.assertTemplateNotUsed(response, 'arbitrator/home.html')        

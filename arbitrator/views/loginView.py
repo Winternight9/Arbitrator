@@ -25,8 +25,6 @@ def loginView(request):
                 return redirect(request.GET.get('next'))
             else:    
                 return redirect(reverse("arbitrator:home"))
-        else:
-            messages.error(request, f"Username or password is not valid")
 
     return render(request, 'arbitrator/login.html', context)
 
