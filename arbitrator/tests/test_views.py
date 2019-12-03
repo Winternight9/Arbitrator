@@ -91,4 +91,4 @@ class ViewsTest(TestCase):
     def test_invalid_id_login(self):
         response = self.client.get('/login/')
         self.assertTemplateUsed(response, 'arbitrator/login.html')
-        self.assertTemplateNotUsed(response, 'arbitrator/home.html')        
+        self.assertTemplateNotUsed(response, 'arbitrator/home.html')
