@@ -43,11 +43,11 @@ class PollForm(forms.Form):
                                 'class': 'checkbox',
                             }
                         ),
-                        choices=CHOICES
+                        choices=CHOICES,
                     )
                 else:
                     self.fields[question.label] = forms.ChoiceField(
-                        widget=forms.ChoiceField(
+                        widget=forms.RadioSelect(
                             attrs={
                                 'class': 'checkbox',
                             }
