@@ -19,8 +19,6 @@ def createPollView(request):
                 "poll created"
             )
         except Exception as error:
-            print(error)
-
             messages.error(
                 request,
                 "poll error please try again"
@@ -60,15 +58,21 @@ def savePoll(request):
 
     for question in poll_questions:
         question_label = question['label']
-        question_type = QuestionType(question['type'])
+        question_type = QuestionType(question['type']).value
 
         if question_label == "":
+            poll_db.delete()
+
             raise ValueError("QuestionNameIsNotValid")
 
         if not isinstance(question_label, str):
+            poll_db.delete()
+
             raise TypeError("QuestionNameTypeError")
 
-        if question_type not in [QuestionType.Text, QuestionType.Choice]:
+        if question_type not in [QuestionType.Text.value, QuestionType.Choice.value]:
+            poll_db.delete()
+
             raise ValueError('QuestionTypeIsNotValid')
 
         question_db = Question(
@@ -79,10 +83,12 @@ def savePoll(request):
 
         question_db.save()
 
-        if question_type == QuestionType.Choice:
+        if question_type == QuestionType.Choice.value:
             choices = question['choices']
 
             if choices == []:
+                poll_db.delete()
+
                 raise ValueError('ChoiceQuestionHasNoChoice')
 
             question_multiple_selection = bool(question['multipleSelection'])

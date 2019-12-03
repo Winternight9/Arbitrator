@@ -65,12 +65,12 @@
 }
 
 .input {
-  margin: 0;
+  margin: 8px 0;
   background: #f4f4f4;
   border: none;
   border-radius: 0;
   border-bottom: 2px #3e3e3e dashed;
-  width: 100%;
+  width: 95%;
 }
 
 select, button {
@@ -105,6 +105,11 @@ button:active {
 
 .checkbox {
   cursor: pointer;
+}
+
+.checkbox > li {
+  text-align: start;
+  list-style: none;
 }
 
 .multiple-selection-option-container {
