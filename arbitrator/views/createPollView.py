@@ -19,8 +19,6 @@ def createPollView(request):
                 "poll created"
             )
         except Exception as error:
-            print(error)
-
             messages.error(
                 request,
                 "poll error please try again"
@@ -87,7 +85,7 @@ def savePoll(request):
 
         if question_type == QuestionType.Choice.value:
             choices = question['choices']
-            print(choices)
+
             if choices == []:
                 poll_db.delete()
 

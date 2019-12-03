@@ -11,8 +11,8 @@ def pollView(request, poll_id):
         poll_name = Poll.objects.get(id=poll_id).label
         form = PollForm(poll_id)
     except Exception as error:
-        print(error)
         messages.error(request, "PollError")
+
         return redirect("arbitrator:home")
 
     context = {
