@@ -10,7 +10,6 @@ from arbitrator.views import profileView
 from arbitrator.views import editProfileView
 from arbitrator.views import createPollView
 from arbitrator.views import pollView
-from arbitrator.auth import createArbitratorUserFromGoogleAccount
 
 
 app_name = 'arbitrator'
@@ -23,11 +22,6 @@ urlpatterns = [
     path('home/', homeView, name='home'),
     path('profile/', profileView, name='profile'),
     path('profile/edit/', editProfileView, name='editProfile'),
-    path(
-        'createArbitratorUserFromGoogleAccount/',
-        createArbitratorUserFromGoogleAccount,
-        name='createArbitratorUserFromGoogleAccount'
-    ),
     path('createPoll/', createPollView, name='createPoll'),
     path('poll/<int:poll_id>/', pollView, name='poll')
 ]
