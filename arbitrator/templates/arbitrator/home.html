@@ -31,7 +31,7 @@
           <td>{{poll.created_date}}</td>
           <td>{{poll.total_submission}}</td>
           <td>{{poll.owner.user.get_username}}</td>
-          <td><a class="vote-button">vote</a></td>
+          <td><a href="{% url "arbitrator:poll" poll.pk %}" class="vote-button">vote</a></td>
         </tr>
         {% endfor %}
       </table>

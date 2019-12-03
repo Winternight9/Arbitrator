@@ -1,0 +1,28 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator - Poll 
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+<link rel="stylesheet" href="{% static 'arbitrator/css/createPoll.css' %}" />
+{% endblock %}
+
+{% block content%}
+<div class="container">
+  <div class="frame center">
+    <h1 id="current-route">{{poll_name}}</h1>
+    <div class="poll-container">
+      <div id="question-container">
+        {{ form.as_p }}
+      </div>
+    </div>
+    <div class="add-question-container">
+      <button class="create-button" type="submit">submit</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
