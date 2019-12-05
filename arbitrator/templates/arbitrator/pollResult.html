@@ -17,21 +17,14 @@
     <h1 id="current-route">Result: {{poll_name}}</h1>
       <div class="poll-container">
         <div id="question-container">
-          {% for question in results %}
-            <!-- {% if question.type == 'text' %}
-              <label>{{question.label}}b</label>
-              <div class="text-answer-container">
-              </div>
-            {% else %}
-              <label>{{question.type}}a</label>
-              <div class="text-answer-container">
-              </div>
-            {%  endif %} -->
-            <p>{{question}}a</p>
-            <p>{{answers}}</p>
-          {% endfor %}
         </div>
       </div>
   </div>
 </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    const results = JSON.parse("{{results}}".replace(/&quot;/g,'"'));
+  </script>
 {% endblock %}
