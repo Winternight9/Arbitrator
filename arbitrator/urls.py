@@ -10,6 +10,7 @@ from arbitrator.views import profileView
 from arbitrator.views import editProfileView
 from arbitrator.views import createPollView
 from arbitrator.views import pollView
+from arbitrator.views import pollResultView
 
 
 app_name = 'arbitrator'
@@ -23,5 +24,6 @@ urlpatterns = [
     path('profile/', profileView, name='profile'),
     path('profile/edit/', editProfileView, name='editProfile'),
     path('createPoll/', createPollView, name='createPoll'),
-    path('poll/<int:poll_id>/', pollView, name='poll')
+    path('poll/<int:poll_id>/', pollView, name='poll'),
+    path('result/<int:poll_id>/', pollResultView, name='pollResult')
 ]

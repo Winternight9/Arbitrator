@@ -1,0 +1,37 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator - Poll Result
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+<link rel="stylesheet" href="{% static 'arbitrator/css/Poll.css' %}" />
+{% endblock %}
+
+{% block content%}
+<div class="container">
+  <div class="frame center">
+    <h1 id="current-route">Result: {{poll_name}}</h1>
+      <div class="poll-container">
+        <div id="question-container">
+          {% for question in results %}
+            <!-- {% if question.type == 'text' %}
+              <label>{{question.label}}b</label>
+              <div class="text-answer-container">
+              </div>
+            {% else %}
+              <label>{{question.type}}a</label>
+              <div class="text-answer-container">
+              </div>
+            {%  endif %} -->
+            <p>{{question}}a</p>
+            <p>{{answers}}</p>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
