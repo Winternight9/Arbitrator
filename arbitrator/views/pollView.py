@@ -7,6 +7,16 @@ from arbitrator.forms import PollForm
 
 
 def pollView(request, poll_id):
+    if request.method == "POST":
+        form = PollForm(poll_id, request.POST)
+
+        if form.is_valid():
+            form.save(request.user)
+            messages.success(request, "SubmissionSuccess")
+
+            return redirect("arbitrator:home")
+
+        messages.error(request, "SubmissionError")
     try:
         poll_name = Poll.objects.get(id=poll_id).label
         form = PollForm(poll_id)
