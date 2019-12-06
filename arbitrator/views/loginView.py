@@ -30,4 +30,3 @@ def loginView(request):
 
 
 sys.modules[__name__] = loginView
-     
