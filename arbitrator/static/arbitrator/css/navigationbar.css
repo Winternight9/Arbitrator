@@ -1,27 +1,11 @@
-.topnav-container {
-    padding: 8px 8px;
+@import url( 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' );
+
+#primary-nav {
+  background-color: #e4e4e4;
+  font-size: 20px;
+}
+.container {
+  padding-top: 16px;
+  display: flow-root;
 }
 
-.topnav {
-    background-color: #e4e4e4;
-    border-radius: 4px;
-}
-
-.topnav a {
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.topnav a:hover {
-    background-color: whitesmoke;
-    color: black;
-}
-
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
