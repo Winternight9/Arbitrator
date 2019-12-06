@@ -123,6 +123,26 @@ button:active {
   font-size: 12px;
 }
 
+.text-result-container {
+  margin: 4px 0;
+  border: 1px solid var(--frame-dark-grey);
+  max-height: 80px;
+  overflow: auto;
+  border-radius: 8px;
+}
+
+.choice-result-container {
+  margin: 4px 0;
+  border: 1px solid var(--frame-dark-grey);
+  max-height: 160px;
+  overflow: auto;
+  border-radius: 8px;
+}
+
+.result {
+  margin: 2px 0;
+}
+
 @media only screen and (max-width: 480px) {
   #current-route {
     font-size: 24px;

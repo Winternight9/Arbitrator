@@ -19,6 +19,9 @@
         <div id="question-container">
         </div>
       </div>
+      <div class="add-question-container">
+        <button class="create-button">Download Result</button>
+      </div>
   </div>
 </div>
 {% endblock %}
@@ -27,4 +30,5 @@
   <script>
     const results = JSON.parse("{{results}}".replace(/&quot;/g,'"'));
   </script>
+  <script src="{% static 'arbitrator/js/pollResult.js' %}"></script>
 {% endblock %}

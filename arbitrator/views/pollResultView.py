@@ -15,24 +15,38 @@ def pollResultView(request, poll_id):
     try:
         poll_name = Poll.objects.get(id=poll_id).label
         questions = Question.objects.filter(poll_id=poll_id)
-        results = dict()
+        results = {
+            'data': []
+        }
 
         for question in questions:
             question_type = question.type
 
             if question_type == QuestionType.Text.value:
-                results[question.label] = [
-                    answer["value"] for answer in question.textanswer_set.values()
-                ]
+                results['data'].append(
+                    {
+                        'label': question.label,
+                        'type': question_type,
+                        'answers': [
+                            answer["value"] for answer in question.textanswer_set.values()
+                        ]
+                    }
+                )
             elif question_type == QuestionType.Choice.value:
                 choices = Choice.objects.filter(question_id=question.id)
 
-                results[question.label] = [
+                results['data'].append(
                     {
-                        'label': choice.label,
-                        'voteCount': ChoiceAnswer.get_vote_count_by_choice_id(choice.id)
-                    } for choice in choices
-                ]
+                        'label': question.label,
+                        'type': question_type,
+                        'answers': [
+                            {
+                                'label': choice.label,
+                                'voteCount': ChoiceAnswer.get_vote_count_by_choice_id(choice.id)
+                            } for choice in choices
+                        ]
+                    }
+                )
 
         results = json.dumps(results)
 
