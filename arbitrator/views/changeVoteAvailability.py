@@ -21,4 +21,5 @@ def change_vote_availability(request):
 
 	return HttpResponse('error', status=500)
 
+
 sys.modules[__name__] = change_vote_availability
