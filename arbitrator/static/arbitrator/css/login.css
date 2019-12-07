@@ -17,7 +17,8 @@
   width: fit-content;
 }
 
-#current-route {
+.current-route {
+  font-family: 'Nunito';
   margin: 12px 24px;
   cursor: default;
 }

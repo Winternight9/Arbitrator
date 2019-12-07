@@ -1,15 +1,22 @@
-@import url( 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' );
-
-#primary-nav {
+.nav-container { 
   background-color: #e4e4e4;
   font-size: 20px;
+  margin: 0 8px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 4px rgb(104, 104, 104);;
 }
-.container {
-  padding-top: 6px;
-  display: flow-root;
+.menu-container > ul {
+  list-style-type: none;
+  display: flex;
+  margin: 16px 24px;
+  padding: 0;
 }
 
 .nav-link {
   font-family: 'Nunito', sans-serif;
   color: #3e3e3e;
+  text-decoration: none;
+  margin-left: 12px;
 }

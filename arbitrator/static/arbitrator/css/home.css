@@ -1,9 +1,10 @@
 .poll-container {
   background: var(--frame-grey);
-  border-radius: 4px;
-  margin: 8px;
+  border-radius: 8px;
+  margin: 16px 8px;
   padding: 8px 16px;
   text-align: center;
+  box-shadow: 0 0 8px rgb(104, 104, 104);;
 }
 
 .poll-container > table {
@@ -14,7 +15,9 @@
 .poll-container > table, th, td {
   padding: 4px;
   border: solid var(--frame-grey);
-  border-radius: 4px;
+  font-family: 'Nunito', sans-serif !important;
+  color: #3e3e3e !important;
+  text-decoration: none;
 }
 
 .vote-button {
@@ -22,4 +25,7 @@
   border-radius: 2px;
   background: var(--frame-dark-grey);
   cursor: pointer;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif !important;
+  color: #3e3e3e !important;
 }

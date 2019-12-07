@@ -1,28 +1,11 @@
-{% load staticfiles %} {% block css %}
-<link rel="stylesheet" href="{% static "arbitrator/css/navigationbar.css" %}"/> 
-<!-- Load an icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load staticfiles %} 
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "arbitrator/css/navigationbar.css" %}"/> 
 {% endblock %}
 
-<div id="primary-nav">
-
-		<div class="container">
-		{% if user.is_authenticated %}
-		  <ul class="nav">
-			<li class="nav-item">
-			  <a href="{% url "arbitrator:home" %}" class="nav-link"><i class="fa fa-home"></i>Home</a>
-			</li>
-			<li class="nav-item ">
-			  <a href="{% url "arbitrator:createPoll" %}" class="nav-link"><i class="fa fa-file"></i>Create Poll</a>
-			</li>
-			<li class="nav-item">
-			  <a href="{% url "arbitrator:profile" %}" class="nav-link"><i class="fa fa-vcard"></i>Profile</a>
-			</li>
-			<li class="nav-item ml-auto">
-				<a href="{% url "arbitrator:logout" %}" class="nav-link"><i class="fa fa-user"></i>Logout</a>
-			</li>
-		  </ul>    
-		{% else %}
+<div class="nav-container">
+	<div class="menu-container">
 		<ul class="nav">
 			<li class="nav-item">
 				<a href="{% url "arbitrator:home" %}" class="nav-link"><i class="fa fa-home"></i>Home</a>
@@ -30,12 +13,26 @@
 			<li class="nav-item ">
 				<a href="{% url "arbitrator:createPoll" %}" class="nav-link"><i class="fa fa-file"></i>Create Poll</a>
 			</li>
-			<li class="nav-item ml-auto">
-				<a href="{% url "arbitrator:login" %}" class="nav-link"><i class="fa fa-user"></i>Login</a>
+		</ul>
+	</div>
+	<div class="menu-container">
+		<ul class="nav">
+			{% if user.is_authenticated %}
+			<li class="nav-item">
+				<a href="{% url "arbitrator:profile" %}" class="nav-link"><i class="fa fa-vcard"></i>Profile</a>
 			</li>
-			</ul>    
-			  {% endif %}
-
-			</div>
-	  </div>
+			<li class="nav-item">
+				<a href="{% url "arbitrator:home" %}" class="nav-link"><i class="fa fa-vcard"></i>My Poll</a>
+			</li>
+			<li class="nav-item">
+				<a href="{% url "arbitrator:logout" %}" class="nav-link"><i class="fa fa-user"></i>Logout</a>
+			</li>
+			{% else %}
+			<li class="nav-item ml-auto">
+					<a href="{% url "arbitrator:login" %}" class="nav-link"><i class="fa fa-user"></i>Login</a>
+			</li>
+			{% endif %}
+		</ul> 
+	</div>
+</div>
 

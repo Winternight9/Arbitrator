@@ -15,7 +15,7 @@
   <div class="container">
     <div class="poll-container">
       <div class="poll-header-container">
-        <h1>All Polls</h1>
+        <h1 class="current-route">All Polls</h1>
       </div>
       <table style="width:100%">
         <tr>
@@ -24,6 +24,7 @@
           <th>Submitted</th>
           <th>Owner</th>
           <th>Vote</th>
+          <th>Result</th>
         </tr>
         {% for poll in polls %}
         <tr>
@@ -32,6 +33,7 @@
           <td>{{poll.total_submission}}</td>
           <td>{{poll.owner.user.get_username}}</td>
           <td><a href="{% url "arbitrator:poll" poll.pk %}" class="vote-button">vote</a></td>
+          <td><a href="{% url "arbitrator:pollResult" poll.pk %}" class="vote-button">result</a></td>
         </tr>
         {% endfor %}
       </table>

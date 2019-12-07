@@ -12,20 +12,21 @@
 {% endblock %}
 
 {% block content%}
-<div class="container">
-  <div class="frame center">
-    <h1 id="current-route">{{poll_name}}</h1>
-    <form method="POST">
-      <div class="poll-container">
-        <div id="question-container">
-          {% csrf_token %}
-          {{ form.as_p }}
+  {% include "arbitrator/includes/navigationbar.html" %}
+  <div class="container">
+    <div class="frame center">
+      <h1 class="current-route">{{poll_name}}</h1>
+      <form method="POST">
+        <div class="poll-container">
+          <div id="question-container">
+            {% csrf_token %}
+            {{ form.as_p }}
+          </div>
         </div>
-      </div>
-      <div class="add-question-container">
-        <button class="create-button" type="submit">submit</button>
-      </div>
-    </form>
+        <div class="add-question-container">
+          <button class="create-button" type="submit">submit</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 {% endblock %}
