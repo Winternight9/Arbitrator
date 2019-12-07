@@ -9,7 +9,7 @@ class ViewsTest(TestCase):
         self.username = "testuser"
         self.userpass = "123$*HCfjdksla"
         self.user = User.objects.create_user(self.username,password=self.userpass)
-
+       
     def test_index(self):
         response = self.client.get(path='')
         status = response.status_code
@@ -92,3 +92,12 @@ class ViewsTest(TestCase):
         response = self.client.get('/login/')
         self.assertTemplateUsed(response, 'arbitrator/login.html')
         self.assertTemplateNotUsed(response, 'arbitrator/home.html')
+
+    def test_my_poll_view(self):
+        response = self.client.post('/login/',
+            {'username':self.user.username, 'password':self.userpass})
+        response = self.client.get(path='/myPoll/')
+        self.assertEqual(response.status_code, 200)
+
+
+

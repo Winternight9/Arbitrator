@@ -16,3 +16,5 @@ omit =
     test_*.py
     venv/**
     config/**
+    **/forms/**
+    **/migrations/**
