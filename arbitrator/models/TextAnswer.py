@@ -16,5 +16,9 @@ class TextAnswer(models.Model):
     class Meta:
         app_label = "arbitrator"
 
+    @staticmethod
+    def get_text_answers_by_question_id(id):
+        return TextAnswer.objects.filter(question_id=id)
+
 
 sys.modules[__name__] = TextAnswer

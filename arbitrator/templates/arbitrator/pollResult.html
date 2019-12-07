@@ -1,7 +1,7 @@
 {% extends "arbitrator/base.html" %}
 
 {% block title %}
-  Arbitrator - Poll 
+  Arbitrator - Poll Result
 {% endblock %}
 
 {% load staticfiles %}
@@ -14,18 +14,21 @@
 {% block content%}
 <div class="container">
   <div class="frame center">
-    <h1 id="current-route">{{poll_name}}</h1>
-    <form method="POST">
+    <h1 id="current-route">Result: {{poll_name}}</h1>
       <div class="poll-container">
         <div id="question-container">
-          {% csrf_token %}
-          {{ form.as_p }}
         </div>
       </div>
       <div class="add-question-container">
-        <button class="create-button" type="submit">submit</button>
+        <button class="create-button">Download Result</button>
       </div>
-    </form>
   </div>
 </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    const results = JSON.parse("{{results}}".replace(/&quot;/g,'"'));
+  </script>
+  <script src="{% static 'arbitrator/js/pollResult.js' %}"></script>
 {% endblock %}

@@ -1,8 +1,19 @@
-@import url( 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' );
+.topnav-container {
+    padding: 8px 8px;
+}
 
-#primary-nav {
-  background-color: #e4e4e4;
-  font-size: 20px;
+.topnav {
+    background-color: #e4e4e4;
+    border-radius: 4px;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
 }
 .container {
   padding-top: 6px;

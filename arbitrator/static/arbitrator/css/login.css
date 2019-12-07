@@ -1,6 +1,7 @@
 .container {
   display: flex;
   text-align: center;
+  padding-bottom: 3%;
 }
 
 .center {

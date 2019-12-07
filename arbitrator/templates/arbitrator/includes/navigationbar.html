@@ -39,3 +39,16 @@
 			</div>
 	  </div>
 
+<div class="topnav-container">
+    <div class="topnav">
+        <a class="active" href="{% url "arbitrator:home" %}">Home</a>
+        {% if user.is_authenticated %}
+            <a href="{% url "arbitrator:createPoll" %}">Create Poll</a>
+            <a href="{% url "arbitrator:profile" %}">Profile</a>
+            <a href="{% url "arbitrator:logout" %}">Logout</a>
+        {% else %}
+            <a href="{% url "arbitrator:createPoll" %}">Create Poll</a>
+            <a href="{% url "arbitrator:login" %}">Login</a>
+        {% endif %}
+    </div>
+</div>
