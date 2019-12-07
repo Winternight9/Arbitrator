@@ -14,6 +14,7 @@ from arbitrator.views import pollResultView
 from arbitrator.views import myPollView
 from arbitrator.views import changeResultAvailability
 from arbitrator.views import changeVoteAvailability
+from arbitrator.views import removePoll
 
 
 app_name = 'arbitrator'
@@ -39,5 +40,6 @@ urlpatterns = [
         'changeVoteAvailability/',
         changeVoteAvailability,
         name='changeVoteAvailability'
-    )
+    ),
+    path('removePoll/', removePoll, name='removePoll'),
 ]
