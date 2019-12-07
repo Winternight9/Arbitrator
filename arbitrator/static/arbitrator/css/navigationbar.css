@@ -5,7 +5,11 @@
   font-size: 20px;
 }
 .container {
-  padding-top: 16px;
+  padding-top: 6px;
   display: flow-root;
 }
 
+.nav-link {
+  font-family: 'Nunito', sans-serif;
+  color: #3e3e3e;
+}
