@@ -38,9 +38,10 @@
   box-shadow: 0 0 3px rgb(104, 104, 104);;
 }
 
-#current-route {
+.scurrent-route {
   margin: 12px 0;
   font-size: 56px;
+  font-family: 'Nunito';
   cursor: default;
 }
 
