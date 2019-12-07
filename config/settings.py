@@ -133,6 +133,7 @@ USE_TZ = True
 
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/staticfiles/'
+
 STATICFILES_DIRS = (
     BASE_DIR + '/arbitrator/static/' ,
 )
