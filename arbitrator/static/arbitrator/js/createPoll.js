@@ -127,6 +127,13 @@ function createQuestionLabel(labelPrefix) {
   const container = createLabelContainer();
 
   container.append(createQuestionLabelText(labelPrefix));
+  
+  const removeQuestion = document.createElement('img');
+  removeQuestion.src = 'https://www.iconsdb.com/icons/preview/red/trash-10-xxl.png';
+  removeQuestion.className = "remove-question"
+  removeQuestion.setAttribute("onclick", "removeParent(this)");
+  container.append(removeQuestion);
+  
   container.append(createTextBox());
 
   return container;
@@ -238,6 +245,10 @@ function createInput() {
 
 function setupView() {
   document.getElementById("poll-name-field").focus();
+}
+
+function removeParent(elem) {
+  elem.parentElement.remove();
 }
 
 setupView();
