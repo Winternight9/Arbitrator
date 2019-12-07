@@ -23,7 +23,7 @@
           <th>Date</th>
           <th>Submission</th>
           <th>Owner</th>
-          <th>Status</th>
+          <th>Vote</th>
           <th>Result</th>
         </tr>
         {% for poll in polls %}
@@ -32,8 +32,23 @@
           <td>{{poll.created_date}}</td>
           <td>{{poll.total_submission}}</td>
           <td>{{poll.owner.user.get_username}}</td>
-          <td><a href="{% url "arbitrator:poll" poll.pk %}" class="vote-button">vote</a></td>
-          <td><a href="{% url "arbitrator:pollResult" poll.pk %}" class="vote-button">result</a></td>
+          <td>
+            {% if poll.is_vote_available %}
+              {% if poll.id in voted_poll_ids %}
+                voted
+              {% else %}
+                <a href="{% url "arbitrator:poll" poll.pk %}" class="vote-button">vote</a>
+              {% endif %}
+            {% else %}
+              unavailable
+            {% endif %}
+          </td>
+          <td>
+            {% if poll.is_result_available %}
+              <a href="{% url "arbitrator:pollResult" poll.pk %}" class="vote-button">result</a></td>
+            {% else %}
+              unavailable
+            {% endif %}
         </tr>
         {% endfor %}
       </table>
