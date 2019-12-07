@@ -1,0 +1,69 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator - My Polls
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'arbitrator/css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/myPoll.css' %}" />
+{% endblock %}
+
+{% block content %}
+  {% include "arbitrator/includes/navigationbar.html" %}
+  <div class="container">
+    <div class="poll-container">
+      <div class="poll-header-container">
+        <h1 class="current-route">My Polls</h1>
+      </div>
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Submission</th>
+          <th>Vote</th>
+          <th>Show Result</th>
+          <th>Result</th>
+        </tr>
+        {% for poll in polls %}
+        <tr>
+          <td>{{poll.label}}</td>
+          <td>{{poll.created_date}}</td>
+          <td>{{poll.total_submission}}</td>
+          <td>
+            <label class="switch">
+              {% if poll.is_vote_available %}
+                <input onclick="onVoteCheckboxClick({{poll.id}})" type="checkbox" checked>
+              {% else %}
+                <input onclick="onVoteCheckboxClick({{poll.id}})" type="checkbox">
+              {% endif %}
+              <span class="slider round"></span>
+            </label>
+          </td>
+          <td>
+            <label class="switch">
+                {% if poll.is_result_available %}
+                  <input onclick="onResultCheckboxClick({{poll.id}})" type="checkbox" checked>
+                {% else %}
+                  <input onclick="onResultCheckboxClick({{poll.id}})" type="checkbox">
+                {% endif %}
+                <span class="slider round"></span>
+              </label>
+          </td>
+          <td><a href="{% url "arbitrator:pollResult" poll.pk %}" class="vote-button">result</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    const CSRF_TOKEN = '{{ csrf_token }}';
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{% static 'arbitrator/js/myPoll.js' %}"></script>
+{% endblock %}
