@@ -1,0 +1,34 @@
+{% extends 'arbitrator/base.html' %}
+
+{% block title %}
+  Arbitrator - Edit Profile
+{% endblock %}
+
+{% load staticfiles %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/editProfile.css' %}" />
+{% endblock %}
+
+{% block content %}
+  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
+  <div class="container">
+    <div class="frame center">
+        <h1 class="current-route">Edit Profile</h1>
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="message">{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+      <form method="POST">
+        <div class="input-container">
+          {% csrf_token %}
+          {{ form.as_p }}
+        </div>
+        <div class="button-frame">
+          <button class="button" type="submit">Submit</button>
+        </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}

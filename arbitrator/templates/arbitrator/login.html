@@ -1,0 +1,43 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator - Login
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'arbitrator/css/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="frame center">
+        <h1 class="current-route">Arbitrator Login</h1>
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="message">{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+      <form method="POST">
+        <div class="input-container">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <a href="{% url "oauth:begin" "google-oauth2" %}?{{ request.GET.urlencode }}">
+            <img id="google-signin-button" src="{% static 'arbitrator/images/googleSigninButton.png' %}">
+          </a>
+        </div>
+        <div class="button-frame">
+          <button class="button" type="submit">Login</button>
+          <a class="button" id="sign-up" href="{% url "arbitrator:registration" %}">Sign up</a>
+        </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    document.getElementById("username-field").focus()
+  </script>
+{% endblock %}

@@ -1,0 +1,9 @@
+<script>
+  {% if messages %}
+    {% for message in messages %}
+      const message = '{{message}}';
+
+      alert(message);
+    {% endfor %}
+  {% endif %}
+</script>

@@ -1,0 +1,31 @@
+{% extends "arbitrator/base.html" %}
+
+{% block title %}
+  Arbitrator
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'arbitrator/css/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="frame center">
+      <h1 class="current-route">Arbitrator</h1>
+      <p id="description">
+        This application provides a customizable web-based evaluation form with
+        data summarization and status reporting. Event organizers can create a
+        custom form for their event containing a list of entrants and a set of
+        criteria that they are to be rated on. Criteria may also include guidance
+        on ratings. There may optionally be space for entering comments.
+      </p>
+      <button class="button" type="button">
+        <a class="to-the-site" href="{% url "arbitrator:home" %}">
+          Enter the site
+        </a>
+      </button>
+    </div>
+  </div>
+{% endblock %}

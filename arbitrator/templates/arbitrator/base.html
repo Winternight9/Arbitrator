@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{% block title %} {% endblock %}</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:600&display=swap"
+      rel="stylesheet"
+    />
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'arbitrator/css/basic.css' %}" />
+    <link rel="stylesheet" href="{% static 'arbitrator/css/background.css' %}" />
+    <link rel="stylesheet" href="{% static 'arbitrator/css/font.css' %}" />
+    {% block css %} {% endblock %}
+  </head>
+
+  <body>
+    {% block content %} {% endblock %}
+  </body>
+  
+  {% block script %} {% endblock %}
+</html>

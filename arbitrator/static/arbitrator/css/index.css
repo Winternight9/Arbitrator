@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  padding-top: 8%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.button {
+  background: none;
+  text-align: center;
+  margin: 16px 0;
+  position: inherit;
+  border-radius: 5px;
+  border: 0;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+.to-the-site {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+  color: #3e3e3e;
+  cursor: pointer;
+}
+
+.frame {
+  text-align: center;
+  padding: 0 0;
+  background: var(--frame-grey);
+  border-radius: 16px;
+  width: 60%;
+  box-shadow: 0 0 3px rgb(104, 104, 104);;
+}
+
+.scurrent-route {
+  margin: 12px 0;
+  font-size: 56px;
+  font-family: 'Nunito';
+  cursor: default;
+}
+
+#description {
+  margin: 8px 0 0 0;
+  text-indent: 8%;
+  text-align: start;
+  padding: 12px 24px;
+  background: #f6f6f6;
+  font-size: 24px;
+}
+

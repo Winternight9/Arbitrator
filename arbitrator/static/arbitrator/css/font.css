@@ -1,0 +1,9 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #3e3e3e;
+}
+
+h1,h2,h3,h4, p, label {
+font-family: 'Nunito', sans-serif !important;
+color: #3e3e3e !important;
+}

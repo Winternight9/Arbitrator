@@ -1,0 +1,31 @@
+.poll-container {
+  background: var(--frame-grey);
+  border-radius: 8px;
+  margin: 16px 8px;
+  padding: 8px 16px;
+  text-align: center;
+  box-shadow: 0 0 8px rgb(104, 104, 104);;
+}
+
+.poll-container > table {
+  border-collapse: collapse;
+  background: #f4f4f4;
+}
+
+.poll-container > table, th, td {
+  padding: 4px;
+  border: solid var(--frame-grey);
+  font-family: 'Nunito', sans-serif !important;
+  color: #3e3e3e !important;
+  text-decoration: none;
+}
+
+.vote-button {
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: var(--frame-dark-grey);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif !important;
+  color: #3e3e3e !important;
+}

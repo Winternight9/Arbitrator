@@ -1,0 +1,19 @@
+html, body {
+  max-width: 100%;
+  min-width: 414px;
+  overflow-x: hidden;
+}
+
+body {
+  box-sizing: border-box;
+  background-image: url("./../images/indexBackground.jpg");
+  background-size: auto 100vmax;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    background-size: auto;
+  }
+}
+

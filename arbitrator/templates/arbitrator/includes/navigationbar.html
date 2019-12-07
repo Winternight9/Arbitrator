@@ -1,0 +1,38 @@
+{% load staticfiles %} 
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "arbitrator/css/navigationbar.css" %}"/> 
+{% endblock %}
+
+<div class="nav-container">
+	<div class="menu-container">
+		<ul class="nav">
+			<li class="nav-item">
+				<a href="{% url "arbitrator:home" %}" class="nav-link">Home</a>
+			</li>
+			<li class="nav-item ">
+				<a href="{% url "arbitrator:createPoll" %}" class="nav-link">Create Poll</a>
+			</li>
+		</ul>
+	</div>
+	<div class="menu-container">
+		<ul class="nav">
+			{% if user.is_authenticated %}
+			<li class="nav-item">
+				<a href="{% url "arbitrator:profile" %}" class="nav-link">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a href="{% url "arbitrator:myPoll" %}" class="nav-link">My Poll</a>
+			</li>
+			<li class="nav-item">
+				<a href="{% url "arbitrator:logout" %}" class="nav-link">Logout</a>
+			</li>
+			{% else %}
+			<li class="nav-item ml-auto">
+					<a href="{% url "arbitrator:login" %}" class="nav-link">Login</a>
+			</li>
+			{% endif %}
+		</ul> 
+	</div>
+</div>
+
