@@ -1,97 +1,3 @@
-.center {
-  margin: 0 auto;
-}
-
-.frame {
-  margin-top: 7%;
-  text-align: center;
-  background: var(--frame-grey);
-  box-shadow: 0 0 3px rgb(104, 104, 104);
-  border-radius: 16px;
-  width: fit-content;
-}
-
-#current-route {
-  margin: 12px 24px;
-  cursor: default;
-}
-
-.message-container {
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-.message {
-  font-size: 12px;
-  color: red;
-  cursor: default;
-}
-
-.input {
-  padding-left: 10px;
-  margin-top: 8px;
-  border-radius: 4px;
-  width: 90%;
-  border: solid 1px #d4d4d4;
-  font-size: 16px;
-  padding: 4px;
-  font-family: "Nunito", sans-serif;
-  outline: none;
-}
-
-label {
-  font-size: 20px;
-}
-
-.input-container {
-  background: #f6f6f6;
-  padding: 8px 24px;
-}
-
-#google-signin-button {
-  width: 40%;
-  height: auto;
-  box-shadow: none;
-}
-
-.button {
-  background: none;
-  text-align: center;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  position: inherit;
-  border-radius: 5px;
-  border: 0;
-  transition: transform 0.2s;
-  font-family: "Nunito", sans-serif;
-  font-size: 20px;
-  color: #3e3e3e;
-  outline: none;
-}
-
-.button:hover {
-  transform: scale(1.01);
-  cursor: pointer;
-}
-
-.button-frame {
-  display: flex;
-  justify-content: center;
-}
-
-#sign-up {
-  margin-left: 12%;
-  text-decoration: none;
-  color: #3e3e3e;
-  cursor: pointer;
-}
-
-.helptext {
-  position: absolute;
-  visibility: hidden;
-}
-
-
 .container {
   padding-top: 16px;
 }
@@ -99,11 +5,6 @@ label {
 .frame {
   width: 80%;
   justify-content: center;
-  margin-top: 7%;
-  text-align: center;
-  background: var(--frame-grey);
-  box-shadow: 0 0 3px rgb(104, 104, 104);
-  border-radius: 16px;
 }
 
 .small-margin-top {
@@ -150,10 +51,16 @@ label {
   font-size: 16px;
 }
 
-
+.add-choice-button {
+  background: #ff7070;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-right: 8px;
+  cursor: pointer;
+}
 
 .create-button {
-  margin: 17.3px 0;
+  margin: 16px 0;
   border-radius: 3px;
 }
 
@@ -184,6 +91,7 @@ select {
 
 button {
   padding: 4px 8px;
+  border: none;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   background: #ff7070;
@@ -255,8 +163,4 @@ button:active {
   .multiple-selection-option-container > label, .add-choice-button {
     font-size: 10px;
   }
-}
-
-.center {
-  margin: 0 auto;
 }

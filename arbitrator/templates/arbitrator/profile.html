@@ -13,8 +13,8 @@
 
 {% if user.is_authenticated %}
 {% block content %}
-{% include "arbitrator/includes/navigationbar.html" %}
-<div class="container">
+  {% include "arbitrator/includes/navigationbar.html" with navigationbar=navigationbar %}
+  <div class="container">
     <div class="frame center">
       <h1 class="current-route">Profile</h1>
       <div class="detail-container">
