@@ -133,11 +133,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'arbitrator/static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_URL = '/static/'
-
 if 'I_AM_HEROKU' in os.environ:
     # Configure Django App for Heroku.
     import django_heroku
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATIC_URL = '/static/'
     django_heroku.settings(locals())
+
+else:
+    STATIC_ROOT = 'static'
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (
+    BASE_DIR + '/arbitrator/static/' ,
+)
