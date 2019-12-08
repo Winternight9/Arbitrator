@@ -140,7 +140,6 @@ if 'I_AM_HEROKU' in os.environ:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     STATIC_URL = '/static/'
     django_heroku.settings(locals())
-
 else:
     STATIC_ROOT = 'static'
     STATIC_URL = '/static/'
