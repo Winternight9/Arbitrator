@@ -129,7 +129,7 @@ function createQuestionLabel(labelPrefix) {
   container.append(createQuestionLabelText(labelPrefix));
   
   const removeQuestion = document.createElement('img');
-  removeQuestion.src = 'https://www.iconsdb.com/icons/preview/red/trash-10-xxl.png';
+  removeQuestion.src = 'https://i.ibb.co/QQFywwT/trash.png';
   removeQuestion.className = "remove-question"
   removeQuestion.setAttribute("onclick", "removeParent(this)");
   container.append(removeQuestion);
@@ -248,7 +248,7 @@ function setupView() {
 }
 
 function removeParent(elem) {
-  elem.parentElement.remove();
+  elem.parentElement.parentElement.remove();
 }
 
 setupView();
