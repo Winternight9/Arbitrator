@@ -29,7 +29,9 @@ def createPollView(request):
         return HttpResponse(url)
 
     user = request.user
-    context = {user: user}
+    context = {
+        "user": user
+    }
 
     return render(
         request,
