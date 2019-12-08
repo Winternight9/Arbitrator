@@ -8,7 +8,7 @@
 
 {% block css %}
   <link rel="stylesheet" href="{% static 'arbitrator/css/home.css' %}" />
-  <link rel="stylesheet" href="{% static 'arbitrator/css/myPoll.css' %}" />
+  <link rel="stylesheet" href="{% static 'arbitrator/css/mypoll.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -26,6 +26,7 @@
           <th>Vote</th>
           <th>Show Result</th>
           <th>Result</th>
+          <th>Remove</th>
         </tr>
         {% for poll in polls %}
         <tr>
@@ -53,6 +54,7 @@
               </label>
           </td>
           <td><a href="{% url "arbitrator:pollResult" poll.pk %}" class="vote-button">result</a></td>
+          <td><img src="{% static 'arbitrator/images/trash.png' %}" class="remove-question" onclick="onRemovePollClick({{poll.id}})" alt="X"></td>
         </tr>
         {% endfor %}
       </table>

@@ -57,3 +57,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.remove-question {
+  height: 20px;
+  width: auto;
+  margin-bottom: -5px;
+  cursor: pointer;
+}

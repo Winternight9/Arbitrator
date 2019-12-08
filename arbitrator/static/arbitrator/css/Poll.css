@@ -140,6 +140,14 @@ button:active {
   margin: 2px 0;
 }
 
+.remove-question {
+  margin-bottom: -1px;
+  margin-left: 3px;
+  cursor: pointer;
+  width: auto;
+  height: 16px;
+}
+
 @media only screen and (max-width: 480px) {
   .current-route {
     font-family: 'Nunito';
