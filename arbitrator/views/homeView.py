@@ -6,7 +6,7 @@ from arbitrator.models import PollSubmission
 
 
 def home(request):
-    polls = Poll.objects.all().order_by('-is_vote_available', '-pollsubmission',)
+    polls = Poll.objects.all().order_by('-is_vote_available')
 
     voted_poll_ids = [
         submission.poll_id

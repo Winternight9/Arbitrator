@@ -2,7 +2,7 @@ import sys
 
 from django.shortcuts import render, reverse, redirect
 from django.contrib.auth import authenticate, login
-from ..forms import RegistrationForm
+from arbitrator.forms import RegistrationForm
 from django.contrib import messages
 from arbitrator.models import ArbitratorUser
 
@@ -13,15 +13,12 @@ def registrationView(request):
 
         if form.is_valid():
             form.save()
+
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-
             user = authenticate(username=username, password=raw_password)
 
             login(request, user)
-
-            new_user = ArbitratorUser(user=user)
-            new_user.save()
 
             messages.success(request, f"Account: {username} created.\nWelcome to Arbitrator")
 
