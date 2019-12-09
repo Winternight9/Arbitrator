@@ -9,10 +9,17 @@ from arbitrator.models import Poll
 from arbitrator.models import Choice
 from arbitrator.models import TextAnswer
 from arbitrator.models import ChoiceAnswer
+from urllib.parse import urlparse
 
 
 def pollResultView(request, poll_id):
     try:
+        result_status = Poll.objects.get(id=poll_id).is_result_available
+        referer = request.META.get('HTTP_REFERER')
+        previous_path = urlparse(referer) 
+        if result_status == False and previous_path.path != '/myPoll/':
+            messages.error(request, "ResultNotAvaliableRightNow")
+            return redirect("arbitrator:home")
         poll_name = Poll.objects.get(id=poll_id).label
         questions = Question.objects.filter(poll_id=poll_id)
         results = {
