@@ -4,11 +4,17 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from arbitrator.models import Poll
 from arbitrator.forms import PollForm
+from arbitrator.models import PollSubmission
 from django.contrib.auth.decorators import login_required
 
 
 @login_required
 def pollView(request, poll_id):
+    if PollSubmission.objects.filter(user_id=request.user.id, poll_id=poll_id).count() != 0:
+        messages.error(request, "YouAreNotAllowedToViewThisPoll")
+
+        return redirect("arbitrator:home")
+
     if request.method == "POST":
         form = PollForm(poll_id, request.POST)
         if form.is_valid():
