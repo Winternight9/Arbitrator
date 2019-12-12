@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def pollView(request, poll_id):
     if PollSubmission.objects.filter(user_id=request.user.id, poll_id=poll_id).count() != 0:
-        messages.error(request, "YouAreNotAllowedToViewThisPoll")
+        messages.error(request, "YouAlreadyVotedThisPoll")
 
         return redirect("arbitrator:home")
 
