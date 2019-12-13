@@ -7,8 +7,8 @@
 
 ---
 ## **Prerequisite**
-* `Python 3.6` or newer
-* `Django 2.2.6` or newer
+- `Python (ver.3.6 or newer)` [download site](https://www.python.org/downloads/)
+- `Python modules listed in` [requirement file](requirements.txt)
 
 ---
 ## **How to run on local**
@@ -32,6 +32,11 @@ source venv/bin/activate
 Next install required packages using the following command:
 ```
 (venv) pip install -r requirements.txt 
+```
+
+Create the migration file using the following command:
+```
+(venv) python manage.py makemigrations
 ```
 
 Create the database using the following command:
