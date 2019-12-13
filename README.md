@@ -23,7 +23,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET =YOURGOOLEAPISECRETKEY
 TIME_ZONE =YOURTIMEZONE
 ```
 
-Second create virtual environment and activate (optional):
+Second create and activate virtual environment (optional):
 ```
 virtualenv venv
 source venv/bin/activate
