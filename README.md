@@ -8,12 +8,12 @@
 ---
 ## **Prerequisite**
 - `Python (ver.3.6 or newer)` [download site](https://www.python.org/downloads/)
-- `Python modules listed in` [requirement file](requirements.txt)
+- `Python modules listed in ` [requirement file](requirements.txt)
 
 ---
-## **How to run on local**
+## **Installation**
 
-First create .env file to hide secret keys. In .env file should have these following:
+First create .env file containing these following configs:
 ```
 DEBUG =True
 SECRET_KEY =YOURSECRETKEY
@@ -23,7 +23,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET =YOURGOOLEAPISECRETKEY
 TIME_ZONE =YOURTIMEZONE
 ```
 
-Second create virtualenv in the directory next activate virtualenv:
+Second create virtual environment and activate (optional):
 ```
 virtualenv venv
 source venv/bin/activate
@@ -31,27 +31,32 @@ source venv/bin/activate
 
 Next install required packages using the following command:
 ```
-(venv) pip install -r requirements.txt 
+pip install -r requirements.txt 
 ```
 
 Create the migration file using the following command:
 ```
-(venv) python manage.py makemigrations
+python manage.py makemigrations
 ```
 
 Create the database using the following command:
 ```
-(venv) python manage.py migrate
+python manage.py migrate
 ```
 
 Collects static files from each of your applications
 ```
-(venv) python manage.py collectstatic
+python manage.py collectstatic
 ```
 
-Last using this command to start the server:
+## **Runing Locally**
+
+Use the following command to run the app locally:
+
+p.s. default port is 8000
+
 ```
-(venv) python manage.py runserver
+python manage.py runserver
 ```
 
 ---
@@ -70,4 +75,4 @@ Last using this command to start the server:
 - [Iteration plan](https://docs.google.com/document/d/1fXLNDfrdQ5OEX7WIRAhF1MOurH1jjK2mBHLmrH1Qhdc/edit?usp=sharing)
 - [Iteration script](https://docs.google.com/document/d/1SIVhFa8ENOlhmjqFwTwIH4pjj2gcpML4t7fsYj02RDk/edit?usp=sharing)
 - [Code review script & checklist](https://docs.google.com/document/d/1yKp1QEeML1Y40vKWtDQXcF1b86ywMhAMUPt1jFsnZ90/edit?usp=sharing)
-- [Github issuec tracker](https://github.com/Winternight9/Arbitrator/issues)
+- [Github issue tracker](https://github.com/Winternight9/Arbitrator/issues)
