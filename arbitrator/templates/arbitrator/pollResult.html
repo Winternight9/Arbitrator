@@ -29,7 +29,7 @@
 
 {% block script%}
   <script>
-    const results = JSON.parse("{{results}}".replace(/&quot;/g,'"'));
+    const results = JSON.parse("{{results}}".replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,"&"));
   </script>
   <script src="{% static 'arbitrator/js/pollResult.js' %}"></script>
 {% endblock %}
